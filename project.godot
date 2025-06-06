@@ -10,9 +10,17 @@ config_version=5
 
 [application]
 
-config/name="atestathorror"
+config/name="Atestat Horror"
+run/main_scene="uid://de1h6rvt8wrl6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1980
+window/size/viewport_height=1080
+window/size/mode=2
+window/size/borderless=true
 
 [dotnet]
 
