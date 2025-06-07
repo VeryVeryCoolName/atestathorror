@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://de1h6rvt8wrl6"]
+[gd_scene load_steps=3 format=3 uid="uid://de1h6rvt8wrl6"]
 
 [ext_resource type="Script" uid="uid://c7w03khaavn75" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="AudioStream" uid="uid://bodxpyqdaf8ht" path="res://music/mainmenu.mp3" id="2_48xlc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,6 +39,11 @@ offset_bottom = 700.0
 theme_override_font_sizes/font_size = 80
 text = "Quit"
 
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_48xlc")
+autoplay = true
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="tree_entered" from="MainMenuMusic" to="." method="_on_main_menu_music_tree_entered"]
