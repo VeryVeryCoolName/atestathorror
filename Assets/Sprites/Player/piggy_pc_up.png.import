@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00g4g5omoqv0"
-path="res://.godot/imported/small bad wolf_up.png-784ca8c7d2c7a9f16b34246320d6a8de.ctex"
+uid="uid://bvdu61k2tdgbg"
+path="res://.godot/imported/piggy_pc_up.png-3233b544a976ed6de41c97f4bc65700e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/small bad wolf_up.png"
-dest_files=["res://.godot/imported/small bad wolf_up.png-784ca8c7d2c7a9f16b34246320d6a8de.ctex"]
+source_file="res://Assets/Sprites/Player/piggy_pc_up.png"
+dest_files=["res://.godot/imported/piggy_pc_up.png-3233b544a976ed6de41c97f4bc65700e.ctex"]
 
 [params]
 

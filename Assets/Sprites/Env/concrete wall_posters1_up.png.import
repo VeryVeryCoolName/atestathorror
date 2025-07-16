@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clnyfcdfeeyyj"
-path="res://.godot/imported/knife_horizontal.png-cdff1de49b6be33b338a2befae82a1a3.ctex"
+uid="uid://b2omkpdgqg1ok"
+path="res://.godot/imported/concrete wall_posters1_up.png-d8e5138cec67240d350d974571165f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/knife_horizontal.png"
-dest_files=["res://.godot/imported/knife_horizontal.png-cdff1de49b6be33b338a2befae82a1a3.ctex"]
+source_file="res://Assets/Sprites/Env/concrete wall_posters1_up.png"
+dest_files=["res://.godot/imported/concrete wall_posters1_up.png-d8e5138cec67240d350d974571165f49.ctex"]
 
 [params]
 

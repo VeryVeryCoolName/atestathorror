@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvjnu3kdrp7di"
-path="res://.godot/imported/small bad wolf_right.png-1a260908716a74d58895e98892d1236a.ctex"
+uid="uid://ctodk63x007a0"
+path="res://.godot/imported/concrete floor.png-8966de30c35b4157bd4c1c1abedeefb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/small bad wolf_right.png"
-dest_files=["res://.godot/imported/small bad wolf_right.png-1a260908716a74d58895e98892d1236a.ctex"]
+source_file="res://Assets/Sprites/Env/concrete floor.png"
+dest_files=["res://.godot/imported/concrete floor.png-8966de30c35b4157bd4c1c1abedeefb8.ctex"]
 
 [params]
 

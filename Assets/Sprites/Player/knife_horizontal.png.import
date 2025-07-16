@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6p6e0k74gx1u"
-path="res://.godot/imported/small bad wolf_left.png-70b955d5d0a5c575b608c8ffe18937cd.ctex"
+uid="uid://clnyfcdfeeyyj"
+path="res://.godot/imported/knife_horizontal.png-c0b15aa89d6dd0b1a436f1483a9d86ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/small bad wolf_left.png"
-dest_files=["res://.godot/imported/small bad wolf_left.png-70b955d5d0a5c575b608c8ffe18937cd.ctex"]
+source_file="res://Assets/Sprites/Player/knife_horizontal.png"
+dest_files=["res://.godot/imported/knife_horizontal.png-c0b15aa89d6dd0b1a436f1483a9d86ad.ctex"]
 
 [params]
 

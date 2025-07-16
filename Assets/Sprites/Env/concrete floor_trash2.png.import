@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwmfppserce2q"
-path="res://.godot/imported/concrete floor_trash1.png-dc0b54d0b14b3314d24ae6a1fd359caf.ctex"
+uid="uid://camb1h8saivpd"
+path="res://.godot/imported/concrete floor_trash2.png-48bab02ee1bf1d468c8b69f78ff2bd94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/concrete floor_trash1.png"
-dest_files=["res://.godot/imported/concrete floor_trash1.png-dc0b54d0b14b3314d24ae6a1fd359caf.ctex"]
+source_file="res://Assets/Sprites/Env/concrete floor_trash2.png"
+dest_files=["res://.godot/imported/concrete floor_trash2.png-48bab02ee1bf1d468c8b69f78ff2bd94.ctex"]
 
 [params]
 

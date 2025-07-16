@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://camb1h8saivpd"
-path="res://.godot/imported/concrete floor_trash2.png-d337793a8bb312eb01d5b3e1209208ab.ctex"
+uid="uid://88gxvlmc2xol"
+path="res://.godot/imported/concrete wall_up.png-23e10bd6809561d10615a95f1158686e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/concrete floor_trash2.png"
-dest_files=["res://.godot/imported/concrete floor_trash2.png-d337793a8bb312eb01d5b3e1209208ab.ctex"]
+source_file="res://Assets/Sprites/Env/concrete wall_up.png"
+dest_files=["res://.godot/imported/concrete wall_up.png-23e10bd6809561d10615a95f1158686e.ctex"]
 
 [params]
 
