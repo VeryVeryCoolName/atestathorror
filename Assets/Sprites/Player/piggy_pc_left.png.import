@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctodk63x007a0"
-path="res://.godot/imported/concrete floor.png-8ad5f12079aa86eb4df74a4faa631d2a.ctex"
+uid="uid://4sn7703fvcas"
+path="res://.godot/imported/piggy_pc_left.png-b2e30df62de1dd6325ac72d4e2583762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/concrete floor.png"
-dest_files=["res://.godot/imported/concrete floor.png-8ad5f12079aa86eb4df74a4faa631d2a.ctex"]
+source_file="res://Assets/Sprites/Player/piggy_pc_left.png"
+dest_files=["res://.godot/imported/piggy_pc_left.png-b2e30df62de1dd6325ac72d4e2583762.ctex"]
 
 [params]
 

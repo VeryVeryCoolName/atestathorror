@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4sn7703fvcas"
-path="res://.godot/imported/piggy_pc_left.png-5ebc8efae516909cf0f5180d03f4a62c.ctex"
+uid="uid://db5awk8h4aucc"
+path="res://.godot/imported/big bad wolf_idle.png-af4b08b387a906d6a9d79ebcbb78efbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/piggy_pc_left.png"
-dest_files=["res://.godot/imported/piggy_pc_left.png-5ebc8efae516909cf0f5180d03f4a62c.ctex"]
+source_file="res://Assets/Sprites/Enemies/big bad wolf_idle.png"
+dest_files=["res://.godot/imported/big bad wolf_idle.png-af4b08b387a906d6a9d79ebcbb78efbb.ctex"]
 
 [params]
 

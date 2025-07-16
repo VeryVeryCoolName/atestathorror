@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxxvwl4mdwj8p"
-path="res://.godot/imported/concrete wall_right.png-dfee0913878475d6fae94bd3c1c88611.ctex"
+uid="uid://buihs8280uw53"
+path="res://.godot/imported/concrete wall_left.png-6638c221b00a7751f7172b3799a417e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/concrete wall_right.png"
-dest_files=["res://.godot/imported/concrete wall_right.png-dfee0913878475d6fae94bd3c1c88611.ctex"]
+source_file="res://Assets/Sprites/Env/concrete wall_left.png"
+dest_files=["res://.godot/imported/concrete wall_left.png-6638c221b00a7751f7172b3799a417e4.ctex"]
 
 [params]
 

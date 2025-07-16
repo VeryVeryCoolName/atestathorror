@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvr0m2hu6jy1y"
-path="res://.godot/imported/flaming barrel.png-a6055c7939f0c6dc1e3c3f11be0a9cb2.ctex"
+uid="uid://dp7sh4lr1jpbm"
+path="res://.godot/imported/piggy_pc_down.png-a868ee5641e573791dc7835216234d48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/flaming barrel.png"
-dest_files=["res://.godot/imported/flaming barrel.png-a6055c7939f0c6dc1e3c3f11be0a9cb2.ctex"]
+source_file="res://Assets/Sprites/Player/piggy_pc_down.png"
+dest_files=["res://.godot/imported/piggy_pc_down.png-a868ee5641e573791dc7835216234d48.ctex"]
 
 [params]
 

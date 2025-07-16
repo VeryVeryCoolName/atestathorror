@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkt00r1nwy2c5"
-path="res://.godot/imported/small bad wolf_down.png-7336561bebb2601382cdf81c3b0cc6a9.ctex"
+uid="uid://dvjnu3kdrp7di"
+path="res://.godot/imported/small bad wolf_right.png-c851918fd70d7f8a22c39e252e73fef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/small bad wolf_down.png"
-dest_files=["res://.godot/imported/small bad wolf_down.png-7336561bebb2601382cdf81c3b0cc6a9.ctex"]
+source_file="res://Assets/Sprites/Enemies/small bad wolf_right.png"
+dest_files=["res://.godot/imported/small bad wolf_right.png-c851918fd70d7f8a22c39e252e73fef8.ctex"]
 
 [params]
 

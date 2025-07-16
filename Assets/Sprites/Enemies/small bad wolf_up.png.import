@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buihs8280uw53"
-path="res://.godot/imported/concrete wall_left.png-ea176362504b87489b2ba8df94f1f5b3.ctex"
+uid="uid://00g4g5omoqv0"
+path="res://.godot/imported/small bad wolf_up.png-2a544cb5af2a86fdb965721dcf8e2c53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/concrete wall_left.png"
-dest_files=["res://.godot/imported/concrete wall_left.png-ea176362504b87489b2ba8df94f1f5b3.ctex"]
+source_file="res://Assets/Sprites/Enemies/small bad wolf_up.png"
+dest_files=["res://.godot/imported/small bad wolf_up.png-2a544cb5af2a86fdb965721dcf8e2c53.ctex"]
 
 [params]
 

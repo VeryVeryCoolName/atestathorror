@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f3huqk6r6sqm"
-path="res://.godot/imported/piggy_pc_right.png-64186aa52f85281961945b1ddb6b1178.ctex"
+uid="uid://cxxvwl4mdwj8p"
+path="res://.godot/imported/concrete wall_right.png-660fa2e187597ccab488dcf193eab034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/piggy_pc_right.png"
-dest_files=["res://.godot/imported/piggy_pc_right.png-64186aa52f85281961945b1ddb6b1178.ctex"]
+source_file="res://Assets/Sprites/Env/concrete wall_right.png"
+dest_files=["res://.godot/imported/concrete wall_right.png-660fa2e187597ccab488dcf193eab034.ctex"]
 
 [params]
 

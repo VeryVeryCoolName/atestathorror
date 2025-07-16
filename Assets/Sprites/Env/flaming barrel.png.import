@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db5awk8h4aucc"
-path="res://.godot/imported/big bad wolf_idle.png-5781861c82ac6acb6d4494709a60a8d6.ctex"
+uid="uid://bvr0m2hu6jy1y"
+path="res://.godot/imported/flaming barrel.png-27caae6661c5b31f3a745defe2cd1bfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/big bad wolf_idle.png"
-dest_files=["res://.godot/imported/big bad wolf_idle.png-5781861c82ac6acb6d4494709a60a8d6.ctex"]
+source_file="res://Assets/Sprites/Env/flaming barrel.png"
+dest_files=["res://.godot/imported/flaming barrel.png-27caae6661c5b31f3a745defe2cd1bfe.ctex"]
 
 [params]
 
