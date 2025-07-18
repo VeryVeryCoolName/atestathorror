@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=6 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="AudioStream" uid="uid://c6gtnu1gvs8mu" path="res://music/gamemusic.mp3" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://dp7sh4lr1jpbm" path="res://Assets/Sprites/Player/piggy_pc_down.png" id="2_wrm1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2poj3"]
 size = Vector2(115, 145)
@@ -23,6 +24,12 @@ shape = SubResource("RectangleShape2D_2poj3")
 sprite_frames = SubResource("SpriteFrames_2poj3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerCharacter"]
+texture_filter = 1
+position = Vector2(48.37, 59)
+scale = Vector2(9.55, 9.55)
+texture = ExtResource("2_wrm1d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qxrlw")
