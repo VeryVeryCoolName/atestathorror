@@ -12,17 +12,17 @@ size = Vector2(115, 145)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Player Character" type="CharacterBody2D" parent="."]
+[node name="PlayerCharacter" type="CharacterBody2D" parent="."]
 script = ExtResource("1_ebmjs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
 position = Vector2(47.5, 62.5)
 shape = SubResource("RectangleShape2D_2poj3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player Character"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
 sprite_frames = SubResource("SpriteFrames_2poj3")
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Player Character"]
+[node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qxrlw")
