@@ -1,5 +1,5 @@
 class_name PlayerCharacter extends CharacterBody2D
-var movespeed : float = 10000.0
+var movespeed : float = 65000.0
 func _ready():
 	pass
 func _process(delta):
