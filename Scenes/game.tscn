@@ -1,13 +1,84 @@
-[gd_scene load_steps=7 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=19 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://snot1g3hrdef" path="res://Assets/Sprites/Player/Movement/piggy_pc_down3.png" id="2_nb51f"]
 [ext_resource type="AudioStream" uid="uid://c6gtnu1gvs8mu" path="res://music/gamemusic.mp3" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://dp7sh4lr1jpbm" path="res://Assets/Sprites/Player/piggy_pc_down.png" id="2_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://c31k0wiywrw4h" path="res://Assets/Sprites/Player/Movement/piggy_pc_down1.png" id="3_nnt18"]
+[ext_resource type="Texture2D" uid="uid://dnrg3w4egmg4r" path="res://Assets/Sprites/Player/Movement/piggy_pc_down2.png" id="4_ewbju"]
+[ext_resource type="Texture2D" uid="uid://c4yjhdd5ec0w2" path="res://Assets/Sprites/Player/Movement/piggy_pc_left2.png" id="5_85qyi"]
+[ext_resource type="Texture2D" uid="uid://4oymy3oklj2f" path="res://Assets/Sprites/Player/Movement/piggy_pc_left1.png" id="6_iivbl"]
+[ext_resource type="Texture2D" uid="uid://jad7wa6qmxwd" path="res://Assets/Sprites/Player/Movement/piggy_pc_left3.png" id="7_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://c0ewaqrl7amcj" path="res://Assets/Sprites/Player/Movement/piggy_pc_right2.png" id="8_exi56"]
+[ext_resource type="Texture2D" uid="uid://b6m0brmvr7110" path="res://Assets/Sprites/Player/Movement/piggy_pc_right1.png" id="9_7t8sx"]
+[ext_resource type="Texture2D" uid="uid://ckdbv44aheqsv" path="res://Assets/Sprites/Player/Movement/piggy_pc_right3.png" id="10_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://emeuirvmu8uh" path="res://Assets/Sprites/Player/Movement/piggy_pc_up1.png" id="11_vm72l"]
+[ext_resource type="Texture2D" uid="uid://du41cvnprgti7" path="res://Assets/Sprites/Player/Movement/piggy_pc_up2.png" id="12_22asu"]
+[ext_resource type="Script" uid="uid://dkkcifn62580r" path="res://Scripts/playeranimations.gd" id="13_fkdbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2poj3"]
 size = Vector2(115, 145)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nb51f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nnt18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ewbju")
+}],
+"loop": true,
+"name": &"moving_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_85qyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iivbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7nbq1")
+}],
+"loop": true,
+"name": &"moving_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_exi56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7t8sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mg4q0")
+}],
+"loop": true,
+"name": &"moving_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_vm72l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_22asu")
+}],
+"loop": true,
+"name": &"moving_up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
 size = Vector2(55, 50)
@@ -24,11 +95,18 @@ position = Vector2(47.5, 62.5)
 shape = SubResource("RectangleShape2D_2poj3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
+texture_filter = 1
+position = Vector2(47, 61)
+scale = Vector2(9.375, 9.375)
 sprite_frames = SubResource("SpriteFrames_2poj3")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("13_fkdbe")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCharacter"]
+visible = false
 texture_filter = 1
 position = Vector2(48.37, 59)
 scale = Vector2(9.55, 9.55)
@@ -37,7 +115,8 @@ texture = ExtResource("2_wrm1d")
 [node name="AttackArea" type="Area2D" parent="PlayerCharacter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea"]
-position = Vector2(133.5, 52)
+position = Vector2(151, 52)
+scale = Vector2(1.97, 1)
 shape = SubResource("RectangleShape2D_wrm1d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
