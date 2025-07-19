@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://du41cvnprgti7" path="res://Assets/Sprites/Player/Movement/piggy_pc_up2.png" id="12_22asu"]
 [ext_resource type="Script" uid="uid://dkkcifn62580r" path="res://Scripts/playeranimations.gd" id="13_fkdbe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2poj3"]
-size = Vector2(115, 145)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
 "frames": [{
@@ -80,8 +77,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2poj3"]
+size = Vector2(115, 145)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
-size = Vector2(55, 50)
+size = Vector2(24.4082, 34.3221)
 
 [node name="game" type="Node2D"]
 
@@ -89,10 +89,6 @@ size = Vector2(55, 50)
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
 script = ExtResource("1_ebmjs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
-position = Vector2(47.5, 62.5)
-shape = SubResource("RectangleShape2D_2poj3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
 texture_filter = 1
@@ -103,8 +99,6 @@ animation = &"idle"
 autoplay = "idle"
 script = ExtResource("13_fkdbe")
 
-[node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
-
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCharacter"]
 visible = false
 texture_filter = 1
@@ -112,11 +106,17 @@ position = Vector2(48.37, 59)
 scale = Vector2(9.55, 9.55)
 texture = ExtResource("2_wrm1d")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
+position = Vector2(47.5, 62.5)
+shape = SubResource("RectangleShape2D_2poj3")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
+
 [node name="AttackArea" type="Area2D" parent="PlayerCharacter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea"]
-position = Vector2(151, 52)
-scale = Vector2(1.97, 1)
+position = Vector2(47, 59.875)
+scale = Vector2(4.38376, -3.73666)
 shape = SubResource("RectangleShape2D_wrm1d")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
