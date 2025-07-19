@@ -8,6 +8,7 @@ var is_attacking: bool = false
 @onready var attack_area = $AttackArea
 
 func _process(delta):
+	
 	if not is_attacking:
 		direction.x = Input.get_action_strength("MoveRight") - Input.get_action_strength("MoveLeft")
 		direction.y = Input.get_action_strength("MoveDown") - Input.get_action_strength("MoveUp")
