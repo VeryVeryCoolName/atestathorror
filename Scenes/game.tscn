@@ -81,7 +81,7 @@ animations = [{
 size = Vector2(115, 145)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
-size = Vector2(24.4082, 34.3221)
+size = Vector2(19.5038, 28.0999)
 
 [node name="game" type="Node2D"]
 
@@ -115,7 +115,7 @@ shape = SubResource("RectangleShape2D_2poj3")
 [node name="AttackArea" type="Area2D" parent="PlayerCharacter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea"]
-position = Vector2(47, 59.875)
+position = Vector2(45, 60.5)
 scale = Vector2(4.38376, -3.73666)
 shape = SubResource("RectangleShape2D_wrm1d")
 
