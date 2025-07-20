@@ -7,8 +7,12 @@ var direction : Vector2 = Vector2.ZERO
 var is_attacking: bool = false
 @onready var attack_area = $AttackArea
 @onready var animated_sprite = $AnimatedSprite2D
+var freeze : = false
 
 func _process(delta):
+	if freeze:
+		velocity = Vector2.ZERO
+		return
 	if not is_attacking:
 		direction.x = Input.get_action_strength("MoveRight") - Input.get_action_strength("MoveLeft")
 		direction.y = Input.get_action_strength("MoveDown") - Input.get_action_strength("MoveUp")
