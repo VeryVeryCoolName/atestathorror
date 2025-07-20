@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=20 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
 [ext_resource type="Texture2D" uid="uid://snot1g3hrdef" path="res://Assets/Sprites/Player/Movement/piggy_pc_down3.png" id="2_nb51f"]
 [ext_resource type="AudioStream" uid="uid://c6gtnu1gvs8mu" path="res://music/gamemusic.mp3" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://dp7sh4lr1jpbm" path="res://Assets/Sprites/Player/piggy_pc_down.png" id="2_wrm1d"]
@@ -86,6 +87,9 @@ size = Vector2(19.5038, 28.0999)
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_nnt18")
+board_size = Vector2(1200, 1080)
+player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
 script = ExtResource("1_ebmjs")
