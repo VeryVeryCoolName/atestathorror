@@ -97,7 +97,7 @@ board_size = Vector2(1850, 950)
 player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(0, 136)
+position = Vector2(-950, 643)
 script = ExtResource("1_ebmjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
@@ -130,15 +130,15 @@ shape = SubResource("RectangleShape2D_wrm1d")
 stream = ExtResource("2_qxrlw")
 autoplay = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, -300)
+[node name="BossCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(-942, 242)
 script = ExtResource("16_ewbju")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossCharacter"]
 scale = Vector2(9.78, 9.78)
 shape = SubResource("RectangleShape2D_ewbju")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="BossCharacter"]
 texture_filter = 1
 scale = Vector2(9.78, 9.78)
 texture = ExtResource("17_85qyi")

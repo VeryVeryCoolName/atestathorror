@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ml2iogmfpahv"]
+
+[ext_resource type="Texture2D" uid="uid://b7p64p2w0w14v" path="res://Assets/Sprites/Enemies/Animations/wolf_claw1.png" id="1_6cntr"]
+[ext_resource type="Texture2D" uid="uid://dwggra8y0l527" path="res://Assets/Sprites/Enemies/Animations/wolf_claw2.png" id="2_32xo8"]
+[ext_resource type="Texture2D" uid="uid://jjoj48n8oibq" path="res://Assets/Sprites/Enemies/Animations/wolf_claw3.png" id="3_1c7v0"]
+[ext_resource type="Texture2D" uid="uid://b232wpj621t12" path="res://Assets/Sprites/Enemies/Animations/wolf_claw4.png" id="4_dtadu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngdiy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00cdh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6cntr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_32xo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1c7v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dtadu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="WolfClawAttack" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ngdiy")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_00cdh")
+frame = 3
+frame_progress = 1.0
