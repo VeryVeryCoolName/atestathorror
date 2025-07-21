@@ -12,7 +12,7 @@ func _ready():
 	global_position = board_center(current_board)
 	make_current()
 
-func _process(delta):
+func _process(_delta):
 	if transitioning:
 		return
 
