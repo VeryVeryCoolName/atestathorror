@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=23 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://emeuirvmu8uh" path="res://Assets/Sprites/Player/Movement/piggy_pc_up1.png" id="11_vm72l"]
 [ext_resource type="Texture2D" uid="uid://du41cvnprgti7" path="res://Assets/Sprites/Player/Movement/piggy_pc_up2.png" id="12_22asu"]
 [ext_resource type="Script" uid="uid://dkkcifn62580r" path="res://Scripts/playeranimations.gd" id="13_fkdbe"]
+[ext_resource type="Script" uid="uid://d21ns8bcg5sem" path="res://Scripts/boss.gd" id="16_ewbju"]
+[ext_resource type="Texture2D" uid="uid://dkt00r1nwy2c5" path="res://Assets/Sprites/Enemies/small bad wolf_down.png" id="17_85qyi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -84,6 +86,9 @@ size = Vector2(115, 145)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrm1d"]
 size = Vector2(19.5038, 28.0999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewbju"]
+size = Vector2(11.9632, 16.1554)
+
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -92,7 +97,7 @@ board_size = Vector2(1850, 950)
 player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-771, -398)
+position = Vector2(-44, 110)
 script = ExtResource("1_ebmjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
@@ -127,3 +132,16 @@ shape = SubResource("RectangleShape2D_wrm1d")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qxrlw")
 autoplay = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, -300)
+script = ExtResource("16_ewbju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(9.78, 9.78)
+shape = SubResource("RectangleShape2D_ewbju")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(9.78, 9.78)
+texture = ExtResource("17_85qyi")
