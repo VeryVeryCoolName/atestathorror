@@ -88,10 +88,11 @@ size = Vector2(19.5038, 28.0999)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_nnt18")
-board_size = Vector2(1200, 1080)
+board_size = Vector2(1850, 950)
 player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(-771, -398)
 script = ExtResource("1_ebmjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
