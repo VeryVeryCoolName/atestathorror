@@ -3,7 +3,7 @@ extends CharacterBody2D
 var state = "idle"
 var player = null
 var distanceToPlayer = 1000
-var moveDirection = Vector2()
+var moveDirection = Vector2.ZERO
 var moveSpeed = 10000
 
 func _ready():

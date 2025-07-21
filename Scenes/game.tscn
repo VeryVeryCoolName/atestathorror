@@ -97,12 +97,11 @@ board_size = Vector2(1850, 950)
 player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-44, 110)
+position = Vector2(0, 136)
 script = ExtResource("1_ebmjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
 texture_filter = 1
-position = Vector2(47, 61)
 scale = Vector2(9.375, 9.375)
 sprite_frames = SubResource("SpriteFrames_2poj3")
 animation = &"idle"
@@ -117,7 +116,6 @@ scale = Vector2(9.55, 9.55)
 texture = ExtResource("2_wrm1d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
-position = Vector2(47.5, 62.5)
 shape = SubResource("RectangleShape2D_2poj3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
@@ -125,7 +123,6 @@ shape = SubResource("RectangleShape2D_2poj3")
 [node name="AttackArea" type="Area2D" parent="PlayerCharacter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea"]
-position = Vector2(45, 60.5)
 scale = Vector2(4.38376, -3.73666)
 shape = SubResource("RectangleShape2D_wrm1d")
 
