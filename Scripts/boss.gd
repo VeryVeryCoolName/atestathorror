@@ -11,6 +11,10 @@ var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
 var isCooldownFinished = true
+var attackFrameCounter = 0
+signal attackHit
+signal attackCollide
+signal attackCollideExit
 
 func _process(_delta):
 	if state == "idle" and player:
@@ -28,6 +32,9 @@ func _process(_delta):
 		moveDirection = Vector2.ZERO
 		if isCooldownFinished:
 			state = "idle"
+	if attackFrameCounter == 3:
+		attackHit.emit()
+		attackFrameCounter = 0
 	pass
 
 func _physics_process(delta):
@@ -40,13 +47,29 @@ func startAttack():
 	attackDirection = moveDirection.normalized().round()
 	attack = attackScene.instantiate()
 	add_child(attack)
+	attack.body_entered.connect(_onCollision)
+	attack.body_exited.connect(_onCollisionExit)
 	attack_animatedsprite = attack.get_node("AnimatedSprite2D")
 	attack.global_position = position + attackDirection * 125
 	attack.scale = Vector2(6, 6)
 	attack_animatedsprite.play("default")
-	attack_animatedsprite.animation_finished.connect(finishAttack)
+	attack_animatedsprite.animation_finished.connect(_finishAttack)
+	attack_animatedsprite.frame_changed.connect(_onAttackFrameChange)
 	
-func finishAttack():
+func _finishAttack():
 	if is_instance_valid(attack):
 		attack.queue_free()
+	attackFrameCounter = 0
 	isCooldownFinished = true
+
+# La ultimele astea 3 o sa dau mald cand facem phase 2
+# (ca o sa aiba mai multe tipuri de atac)
+	
+func _onAttackFrameChange():
+	attackFrameCounter += 1
+	
+func _onCollision(body: Node2D):
+	attackCollide.emit()
+	
+func _onCollisionExit(body: Node2D):
+	attackCollideExit.emit()

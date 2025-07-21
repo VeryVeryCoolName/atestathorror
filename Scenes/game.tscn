@@ -98,6 +98,8 @@ player_path = NodePath("../PlayerCharacter")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
 position = Vector2(-950, 643)
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_ebmjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
@@ -142,3 +144,7 @@ shape = SubResource("RectangleShape2D_ewbju")
 texture_filter = 1
 scale = Vector2(9.78, 9.78)
 texture = ExtResource("17_85qyi")
+
+[connection signal="attackCollide" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide"]
+[connection signal="attackCollideExit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide_exit"]
+[connection signal="attackHit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_hit"]

@@ -9,7 +9,12 @@ var is_attacking: bool = false
 @onready var animated_sprite = $AnimatedSprite2D
 var freeze : = false
 
+var health = 100
+var inAttack = false
+
 func _process(delta):
+	if (health == 0):
+		freeze = true
 	if freeze:
 		velocity = Vector2.ZERO
 		return
@@ -54,3 +59,13 @@ func attack():
 	attack_area.monitoring = false
 	attack_area.position = original_position
 	is_attacking = false
+
+func _on_boss_attack_hit():
+	if inAttack:
+		health -= 20
+
+func _on_boss_attack_collide():
+	inAttack = true
+
+func _on_boss_attack_collide_exit():
+	inAttack = false
