@@ -68,8 +68,8 @@ func _finishAttack():
 func _onAttackFrameChange():
 	attackFrameCounter += 1
 	
-func _onCollision(body: Node2D):
+func _onCollision(_body: Node2D):
 	attackCollide.emit()
 	
-func _onCollisionExit(body: Node2D):
+func _onCollisionExit(_body: Node2D):
 	attackCollideExit.emit()
