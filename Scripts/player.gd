@@ -1,8 +1,7 @@
 class_name PlayerCharacter extends CharacterBody2D
-
-@export var offset = 64
+@export var offset := 64
 @export var movespeed : float = 65000.0
-@export_node_path("ProgressBar") var health_bar_path
+@export_node_path("TextureProgressBar") var health_bar_path
 var direction: Vector2 = Vector2.ZERO
 var cardinaldirection: Vector2 = Vector2.DOWN
 var is_attacking: bool = false
@@ -12,7 +11,7 @@ const MAX_HEALTH := 100
 var health := MAX_HEALTH : set = set_health
 @onready var attack_area = $AttackArea
 @onready var animated_sprite = $AnimatedSprite2D
-var health_bar: ProgressBar
+var health_bar: TextureProgressBar
 
 func _ready():
 	if health_bar_path:
@@ -44,12 +43,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("Attack") and not is_attacking:
 		attack()
 
-# === PHYSICS ===
 func _physics_process(_delta):
 	if not is_attacking:
 		move_and_slide()
 
-# === ATTACK HANDLING ===
 func attack():
 	is_attacking = true
 	velocity = Vector2.ZERO
@@ -76,7 +73,7 @@ func attack():
 	attack_area.monitoring = false
 	attack_area.position = original_position
 	is_attacking = false
-
+	
 func _on_boss_attack_hit():
 	if inAttack:
 		health -= 20  
