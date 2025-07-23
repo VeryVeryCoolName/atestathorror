@@ -105,11 +105,15 @@ player_path = NodePath("../PlayerCharacter")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer"]
-offset_left = 68.0
-offset_top = 44.0
-offset_right = 211.0
-offset_bottom = 72.0
+[node name="Node2D" type="Node2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(175, 75)
+scale = Vector2(4, 4)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Node2D"]
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 8.0
 value = 100.0
 texture_under = ExtResource("3_exi56")
 texture_progress = ExtResource("4_7t8sx")
@@ -120,7 +124,7 @@ position = Vector2(-950, 643)
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_ebmjs")
-health_bar_path = NodePath("../Camera2D/CanvasLayer/TextureProgressBar")
+health_bar_path = NodePath("../Camera2D/CanvasLayer/Node2D/TextureProgressBar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
 texture_filter = 1
