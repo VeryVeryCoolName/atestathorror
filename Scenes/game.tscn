@@ -1,12 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=26 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
 [ext_resource type="Texture2D" uid="uid://snot1g3hrdef" path="res://Assets/Sprites/Player/Movement/piggy_pc_down3.png" id="2_nb51f"]
 [ext_resource type="AudioStream" uid="uid://c6gtnu1gvs8mu" path="res://music/gamemusic.mp3" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://dp7sh4lr1jpbm" path="res://Assets/Sprites/Player/piggy_pc_down.png" id="2_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://c84vekk6w2vl6" path="res://Assets/Sprites/Player/hp_under.png" id="3_exi56"]
 [ext_resource type="Script" uid="uid://b7o434eck1c6h" path="res://Scripts/healthbar.gd" id="3_iivbl"]
 [ext_resource type="Texture2D" uid="uid://c31k0wiywrw4h" path="res://Assets/Sprites/Player/Movement/piggy_pc_down1.png" id="3_nnt18"]
+[ext_resource type="Texture2D" uid="uid://bp82wrm86omaj" path="res://Assets/Sprites/Player/hp_progress.png" id="4_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://dnrg3w4egmg4r" path="res://Assets/Sprites/Player/Movement/piggy_pc_down2.png" id="4_ewbju"]
 [ext_resource type="Texture2D" uid="uid://c4yjhdd5ec0w2" path="res://Assets/Sprites/Player/Movement/piggy_pc_left2.png" id="5_85qyi"]
 [ext_resource type="Texture2D" uid="uid://4oymy3oklj2f" path="res://Assets/Sprites/Player/Movement/piggy_pc_left1.png" id="6_iivbl"]
@@ -103,13 +105,14 @@ player_path = NodePath("../PlayerCharacter")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
-offset_left = 44.0
-offset_top = 28.0
-offset_right = 280.0
-offset_bottom = 59.0
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer"]
+offset_left = 68.0
+offset_top = 44.0
+offset_right = 211.0
+offset_bottom = 72.0
 value = 100.0
-fill_mode = 1
+texture_under = ExtResource("3_exi56")
+texture_progress = ExtResource("4_7t8sx")
 script = ExtResource("3_iivbl")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
@@ -117,7 +120,7 @@ position = Vector2(-950, 643)
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_ebmjs")
-health_bar_path = NodePath("../Camera2D/CanvasLayer/ProgressBar")
+health_bar_path = NodePath("../Camera2D/CanvasLayer/TextureProgressBar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter"]
 texture_filter = 1
