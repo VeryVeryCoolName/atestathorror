@@ -11,6 +11,7 @@ const MAX_HEALTH := 100
 var health := MAX_HEALTH : set = set_health
 @onready var attack_area = $AttackArea
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var weapon_sprite = get_node("AttackArea/AnimatedSprite2D")
 var health_bar: TextureProgressBar
 
 func _ready():
@@ -52,24 +53,26 @@ func attack():
 	velocity = Vector2.ZERO
 	var original_position = attack_area.position
 	
+	weapon_sprite.show()
 	match cardinaldirection:
 		Vector2.UP:
-			animated_sprite.play("attack_up")
+			weapon_sprite.play("attacking_up")
 			attack_area.position = Vector2(0, -offset)
 		Vector2.DOWN:
-			animated_sprite.play("attack_down")
+			weapon_sprite.play("attacking_down")
 			attack_area.position = Vector2(0, offset)
 		Vector2.LEFT:
-			animated_sprite.play("attack_left")
+			weapon_sprite.play("attacking_left")
 			attack_area.position = Vector2(-offset, 0)
 		Vector2.RIGHT:
-			animated_sprite.play("attack_right")
+			weapon_sprite.play("attacking_right")
 			attack_area.position = Vector2(offset, 0)
 
 	attack_area.monitoring = true
 
 	await get_tree().create_timer(0.2).timeout
 
+	weapon_sprite.hide()
 	attack_area.monitoring = false
 	attack_area.position = original_position
 	is_attacking = false
