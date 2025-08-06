@@ -6,6 +6,9 @@ var music_list = {
 	"game": preload("res://music/gamemusic.mp3"),
 	"menu": preload("res://music/mainmenu.mp3")
 }
+var sfx_list = {
+	"howl": preload("res://music/sfx/temp.mp3")
+}
 
 func _ready():
 	streamplayer = AudioStreamPlayer.new()
@@ -28,13 +31,15 @@ func stop():
 func is_playing() -> bool:
 	return streamplayer.playing
 
-func play_sfx(sfx_stream: AudioStream, sfx_delay: float = 0.5, resume_delay: float = 0.5) -> void:
+func play_sfx(sfx_stream: AudioStream, sfx_delay: float = 0.3, resume_delay: float = 0.3) -> void:
 	if not streamplayer.playing:
-		return 
-	streamplayer.pause()
+		return
+	var pos = streamplayer.get_playback_position()
+	streamplayer.stop()
 	await get_tree().create_timer(sfx_delay).timeout
 	sfx_player.stream = sfx_stream
 	sfx_player.play()
 	await sfx_player.finished
 	await get_tree().create_timer(resume_delay).timeout
 	streamplayer.play()
+	streamplayer.seek(pos)
