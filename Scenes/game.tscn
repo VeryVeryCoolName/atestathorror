@@ -1,9 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=30 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
 [ext_resource type="Texture2D" uid="uid://snot1g3hrdef" path="res://Assets/Sprites/Player/Movement/piggy_pc_down3.png" id="2_nb51f"]
-[ext_resource type="AudioStream" uid="uid://c6gtnu1gvs8mu" path="res://music/gamemusic.mp3" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://dp7sh4lr1jpbm" path="res://Assets/Sprites/Player/piggy_pc_down.png" id="2_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://c84vekk6w2vl6" path="res://Assets/Sprites/Player/hp_under.png" id="3_exi56"]
 [ext_resource type="Script" uid="uid://b7o434eck1c6h" path="res://Scripts/healthbar.gd" id="3_iivbl"]
@@ -137,10 +136,6 @@ animations = [{
 size = Vector2(11.9632, 16.1554)
 
 [node name="game" type="Node2D"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_qxrlw")
-autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_nnt18")

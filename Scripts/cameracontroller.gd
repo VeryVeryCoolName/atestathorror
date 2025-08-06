@@ -7,6 +7,7 @@ var player: PlayerCharacter
 var transitioning := false
 
 func _ready():
+	AudioManager.play_stream(AudioManager.music_list["game"])
 	player = get_node(player_path)
 	current_board = get_board_pos(player.global_position)
 	global_position = board_center(current_board)
