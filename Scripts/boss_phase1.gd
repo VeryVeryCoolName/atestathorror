@@ -18,6 +18,8 @@ signal attackHit
 signal attackCollide
 signal attackCollideExit
 
+signal death
+
 func _process(_delta):
 	if state == "idle":
 		animatedsprite.play("default")
