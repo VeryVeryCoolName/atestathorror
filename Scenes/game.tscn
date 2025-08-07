@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=40 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -18,12 +18,21 @@
 [ext_resource type="Texture2D" uid="uid://emeuirvmu8uh" path="res://Assets/Sprites/Player/Movement/piggy_pc_up1.png" id="11_vm72l"]
 [ext_resource type="Texture2D" uid="uid://du41cvnprgti7" path="res://Assets/Sprites/Player/Movement/piggy_pc_up2.png" id="12_22asu"]
 [ext_resource type="Script" uid="uid://dkkcifn62580r" path="res://Scripts/playeranimations.gd" id="13_fkdbe"]
-[ext_resource type="Script" uid="uid://d21ns8bcg5sem" path="res://Scripts/boss.gd" id="16_ewbju"]
+[ext_resource type="Script" uid="uid://d21ns8bcg5sem" path="res://Scripts/boss_phase1.gd" id="16_ewbju"]
 [ext_resource type="Texture2D" uid="uid://dkt00r1nwy2c5" path="res://Assets/Sprites/Enemies/small bad wolf_down.png" id="17_85qyi"]
 [ext_resource type="Texture2D" uid="uid://cheu861pj6wte" path="res://Assets/Sprites/Player/knife_down.png" id="20_22asu"]
 [ext_resource type="Texture2D" uid="uid://d2r56el12umt3" path="res://Assets/Sprites/Player/knife_left.png" id="21_fkdbe"]
 [ext_resource type="Texture2D" uid="uid://c6ctot6fhtsyc" path="res://Assets/Sprites/Player/knife_right.png" id="22_81klo"]
 [ext_resource type="Texture2D" uid="uid://dmgkje7s3y6wi" path="res://Assets/Sprites/Player/knife_up.png" id="23_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://bu3fn0f7yuk6i" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_down1.png" id="25_ese38"]
+[ext_resource type="Texture2D" uid="uid://bfs0are8n5ahw" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_down2.png" id="26_oeip8"]
+[ext_resource type="Texture2D" uid="uid://cl4ysujtbrgs1" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_left1.png" id="27_xe308"]
+[ext_resource type="Texture2D" uid="uid://ca8oq1x3lavlp" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_left2.png" id="28_d3cha"]
+[ext_resource type="Texture2D" uid="uid://cbiq04kemitj4" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_right1.png" id="29_i26dy"]
+[ext_resource type="Texture2D" uid="uid://v55njroip6mp" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_right2.png" id="30_lmoi6"]
+[ext_resource type="Texture2D" uid="uid://bdqsf2whkpwpn" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_up1.png" id="31_6uxt2"]
+[ext_resource type="Texture2D" uid="uid://c6kbcodf8owgi" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_up2.png" id="32_ym3tv"]
+[ext_resource type="PackedScene" uid="uid://ojlyfj8c8onn" path="res://Prefabs/boss_phase_2.tscn" id="33_oeip8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -135,6 +144,61 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewbju"]
 size = Vector2(11.9632, 16.1554)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwj6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_85qyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ese38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oeip8")
+}],
+"loop": true,
+"name": &"walking_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_xe308")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d3cha")
+}],
+"loop": true,
+"name": &"walking_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_i26dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lmoi6")
+}],
+"loop": true,
+"name": &"walking_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_6uxt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ym3tv")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
+
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -209,6 +273,14 @@ shape = SubResource("RectangleShape2D_ewbju")
 texture_filter = 1
 scale = Vector2(9.78, 9.78)
 texture = ExtResource("17_85qyi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BossCharacter"]
+texture_filter = 1
+scale = Vector2(9.78, 9.78)
+sprite_frames = SubResource("SpriteFrames_bwj6o")
+
+[node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
+position = Vector2(-1174, 380)
 
 [connection signal="attackCollide" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide"]
 [connection signal="attackCollideExit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide_exit"]

@@ -6,6 +6,8 @@ var distanceToPlayer = 1000
 var moveDirection = Vector2.ZERO
 var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
+@onready var animatedsprite = $AnimatedSprite2D
+@onready var motionlesssprite = $Sprite2D
 
 var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
@@ -17,8 +19,12 @@ signal attackCollide
 signal attackCollideExit
 
 func _process(_delta):
-	if state == "idle" and player:
-		state = "move"
+	if state == "idle":
+		animatedsprite.play("default")
+		animatedsprite.hide()
+		motionlesssprite.show()
+		if player:
+			state = "move"
 	if state == "move":
 		var playerPosition = player.position
 		moveDirection.x = playerPosition.x - position.x
@@ -35,6 +41,20 @@ func _process(_delta):
 	if attackFrameCounter == 3:
 		attackHit.emit()
 		attackFrameCounter = 0
+	if velocity.x + velocity.y != 0:
+		animatedsprite.show()
+		motionlesssprite.hide()
+	else:
+		animatedsprite.hide()
+		motionlesssprite.show()
+	if velocity.y < 0 and abs(velocity.x) < 150:
+		animatedsprite.play("walking_up")
+	elif velocity.y > 0 and abs(velocity.x) < 150:
+		animatedsprite.play("walking_down")
+	elif velocity.x > 0:
+		animatedsprite.play("walking_right")
+	elif velocity.x < 0:
+		animatedsprite.play("walking_left")
 	pass
 
 func _physics_process(delta):
@@ -50,7 +70,7 @@ func startAttack():
 	attack.body_entered.connect(_onCollision)
 	attack.body_exited.connect(_onCollisionExit)
 	attack_animatedsprite = attack.get_node("AnimatedSprite2D")
-	attack.global_position = position + attackDirection * 125
+	attack.global_position = position + attackDirection * 175
 	attack.scale = Vector2(6, 6)
 	attack_animatedsprite.play("default")
 	attack_animatedsprite.animation_finished.connect(_finishAttack)
