@@ -12,6 +12,7 @@ var moveSpeed = 10000
 var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
+var attackChoice : float
 var isCooldownFinished = true
 var attackFrameCounter = 0
 signal attackHit
@@ -29,10 +30,13 @@ func _process(_delta):
 		var playerPosition = player.position
 		moveDirection.x = playerPosition.x - position.x
 		moveDirection.y = playerPosition.y - position.y
-		if moveDirection.length() < 200:
+		if moveDirection.length() < 225:
 			state = "attack"
 	if state == "attack":
-		startAttack()
+		attackChoice = randfn(0.0, 1.0)
+		if attackChoice < 0.2:
+			rage()
+		else: startAttack()
 		state = "cooldown"
 	if state == "cooldown":
 		moveDirection = Vector2.ZERO
@@ -60,6 +64,10 @@ func _process(_delta):
 func _physics_process(delta):
 	velocity = moveDirection.normalized() * moveSpeed * delta
 	move_and_slide()
+	pass
+
+func rage():
+	#aici o sa dea rage
 	pass
 
 func startAttack():

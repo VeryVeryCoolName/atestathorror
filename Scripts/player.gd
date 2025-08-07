@@ -14,11 +14,17 @@ var health := MAX_HEALTH : set = set_health
 @onready var weapon_sprite = get_node("AttackArea/AnimatedSprite2D")
 var health_bar: TextureProgressBar
 
+var phase2Boss
+
 func _ready():
 	if health_bar_path:
 		health_bar = get_node(health_bar_path)
 		health_bar.max_value = MAX_HEALTH
 		health_bar.value = health
+	phase2Boss = get_tree().get_nodes_in_group("phase2boss")
+	phase2Boss[0].attackHit.connect(_on_boss_attack_hit)
+	phase2Boss[0].attackCollide.connect(_on_boss_attack_collide)
+	phase2Boss[0].attackCollideExit.connect(_on_boss_attack_collide_exit)
 
 func set_health(value: int):
 	health = clamp(value, 0, MAX_HEALTH)
@@ -86,3 +92,8 @@ func _on_boss_attack_collide():
 
 func _on_boss_attack_collide_exit():
 	inAttack = false
+
+#func _on_boss_kill():
+#	phase2Boss = get_tree().get_nodes_in_group("Phase2Character")
+#	
+#

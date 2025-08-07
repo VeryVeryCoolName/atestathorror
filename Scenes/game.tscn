@@ -285,3 +285,4 @@ position = Vector2(-1174, 380)
 [connection signal="attackCollide" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide"]
 [connection signal="attackCollideExit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide_exit"]
 [connection signal="attackHit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_hit"]
+[connection signal="death" from="BossCharacter" to="PlayerCharacter" method="_on_boss_kill"]
