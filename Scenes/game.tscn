@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=41 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bdqsf2whkpwpn" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_up1.png" id="31_6uxt2"]
 [ext_resource type="Texture2D" uid="uid://c6kbcodf8owgi" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_up2.png" id="32_ym3tv"]
 [ext_resource type="PackedScene" uid="uid://ojlyfj8c8onn" path="res://Prefabs/boss_phase_2.tscn" id="33_oeip8"]
+[ext_resource type="Texture2D" uid="uid://das84502515u3" path="res://Assets/Sprites/Env/concrete wall_down.png" id="34_xe308"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -223,7 +224,7 @@ texture_progress = ExtResource("4_7t8sx")
 script = ExtResource("3_iivbl")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-950, 643)
+position = Vector2(-950, 566)
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_ebmjs")
@@ -262,7 +263,7 @@ sprite_frames = SubResource("SpriteFrames_cwurv")
 animation = &"idle"
 
 [node name="BossCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-942, 242)
+position = Vector2(-897, -2902)
 script = ExtResource("16_ewbju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossCharacter"]
@@ -280,7 +281,15 @@ scale = Vector2(9.78, 9.78)
 sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
-position = Vector2(-1174, 380)
+position = Vector2(-1129, -2764)
+
+[node name="Background" type="Node" parent="."]
+
+[node name="ConcreteWallDown" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-931, 797.884)
+scale = Vector2(109.875, 17.0674)
+texture = ExtResource("34_xe308")
 
 [connection signal="attackCollide" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide"]
 [connection signal="attackCollideExit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide_exit"]
