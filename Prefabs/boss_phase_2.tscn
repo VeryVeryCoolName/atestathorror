@@ -1,12 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://ojlyfj8c8onn"]
+[gd_scene load_steps=31 format=3 uid="uid://ojlyfj8c8onn"]
 
 [ext_resource type="Script" uid="uid://bwfosq83v8akn" path="res://Scripts/boss_phase2.gd" id="1_vlbx0"]
 [ext_resource type="Texture2D" uid="uid://cfv2smjpxp84o" path="res://Assets/Sprites/Enemies/big bad wolf_down.png" id="2_40vci"]
+[ext_resource type="Texture2D" uid="uid://bjll8kd7gqdoa" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_rage1.png" id="3_33gi6"]
 [ext_resource type="Texture2D" uid="uid://dtrqhjels5yc4" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_down1.png" id="3_310wp"]
 [ext_resource type="Texture2D" uid="uid://ck4ea275tmm3d" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_down2.png" id="4_5g7dk"]
+[ext_resource type="Texture2D" uid="uid://cyci8txft7w6q" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_rage2.png" id="4_knpei"]
 [ext_resource type="Texture2D" uid="uid://cr3rrdtkmdd7g" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_down3.png" id="5_kbdwg"]
+[ext_resource type="Texture2D" uid="uid://8o71ei8po4re" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_rage3.png" id="5_psgto"]
+[ext_resource type="Texture2D" uid="uid://dwne3epmr831b" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_rage4.png" id="6_6n7d7"]
 [ext_resource type="Texture2D" uid="uid://dbg4201r10tqq" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_down4.png" id="6_33gi6"]
 [ext_resource type="Texture2D" uid="uid://f2ebaum03yvm" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_down5.png" id="7_knpei"]
+[ext_resource type="Texture2D" uid="uid://djbv02ceg6yqm" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_rage5.png" id="7_qv6eb"]
 [ext_resource type="Texture2D" uid="uid://drgujho4didjm" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_left1.png" id="8_psgto"]
 [ext_resource type="Texture2D" uid="uid://baqsn6mhdk4se" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_left2.png" id="9_6n7d7"]
 [ext_resource type="Texture2D" uid="uid://7n7s65bqv17m" path="res://Assets/Sprites/Enemies/Animations/big bad wolf/big bad wolf_left3.png" id="10_qv6eb"]
@@ -34,6 +39,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_33gi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_knpei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_psgto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6n7d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qv6eb")
+}],
+"loop": true,
+"name": &"rage",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,6 +142,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33gi6"]
+size = Vector2(371, 374)
+
 [node name="Phase2Character" type="CharacterBody2D" groups=["phase2boss"]]
 script = ExtResource("1_vlbx0")
 
@@ -133,3 +161,10 @@ sprite_frames = SubResource("SpriteFrames_msr80")
 texture_filter = 1
 scale = Vector2(7, 7)
 texture = ExtResource("2_40vci")
+
+[node name="RageCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_33gi6")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
