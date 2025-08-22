@@ -8,6 +8,7 @@ var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
+var animate = false
 
 var bossHealth = 100. #sa nu modifici numele la variabila asta daca faci boss hp
 
@@ -22,7 +23,8 @@ signal attackCollide
 signal attackCollideExit
 
 var isRaging = false
-@onready var rageCollision = $RageCollision
+@onready var rageArea = $RageArea
+@onready var rageCollisionShape = rageArea.get_child(0)
 
 func _process(_delta):
 	if state == "idle":
@@ -50,7 +52,7 @@ func _process(_delta):
 	if attackFrameCounter == 3:
 		attackHit.emit()
 		attackFrameCounter = 0
-	if velocity.x + velocity.y != 0:
+	if velocity.x + velocity.y != 0 or animate == true:
 		animatedsprite.show()
 		motionlesssprite.hide()
 	else:
@@ -72,12 +74,13 @@ func _physics_process(delta):
 	pass
 
 func rage():
+	animate = true
 	animatedsprite.play("rage")
 	isCooldownFinished = false
 	isRaging = true
-	rageCollision.disabled = false
-	rageCollision.body_entered.connect(_onRageCollision)
-	rageCollision.body_exited.connect(_onRageCollisionExit)
+	rageCollisionShape.disabled = false
+	rageArea.body_entered.connect(_onRageCollision)
+	rageArea.body_exited.connect(_onRageCollisionExit)
 	pass
 	
 func heal(healAmount: float):
@@ -120,14 +123,15 @@ func _onAttackCollision(_body: Node2D):
 func _onAttackCollisionExit(_body: Node2D):
 	attackCollideExit.emit()
 	
-func _onRageCollision():
+func _onRageCollision(_body: Node2D):
 	attackCollide.emit()
 
-func _onRageCollisionExit():
+func _onRageCollisionExit(_body: Node2D):
 	attackCollideExit.emit()
 
 func _on_animation_finished():
 	if isRaging:
-		rageCollision.disabled = true
+		rageCollisionShape.disabled = true
 		heal(10)
 		isCooldownFinished = true
+		animate = false

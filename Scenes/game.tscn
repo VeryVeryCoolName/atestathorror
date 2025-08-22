@@ -281,7 +281,7 @@ scale = Vector2(9.78, 9.78)
 sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
-position = Vector2(-1129, -2764)
+position = Vector2(-905, 92)
 
 [node name="Background" type="Node" parent="."]
 
