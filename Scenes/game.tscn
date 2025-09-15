@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=46 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://c6kbcodf8owgi" path="res://Assets/Sprites/Enemies/Animations/small bad wolf_up2.png" id="32_ym3tv"]
 [ext_resource type="PackedScene" uid="uid://ojlyfj8c8onn" path="res://Prefabs/boss_phase_2.tscn" id="33_oeip8"]
 [ext_resource type="Texture2D" uid="uid://das84502515u3" path="res://Assets/Sprites/Env/concrete wall_down.png" id="34_xe308"]
+[ext_resource type="Texture2D" uid="uid://cxxvwl4mdwj8p" path="res://Assets/Sprites/Env/concrete wall_right.png" id="35_d3cha"]
+[ext_resource type="Texture2D" uid="uid://buihs8280uw53" path="res://Assets/Sprites/Env/concrete wall_left.png" id="36_i26dy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -200,6 +202,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe308"]
+size = Vector2(15.9673, 10.3706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i26dy"]
+size = Vector2(10.9891, 18.0556)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmoi6"]
+size = Vector2(9.95877, 16.1556)
+
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -287,9 +298,40 @@ position = Vector2(-905, 92)
 
 [node name="ConcreteWallDown" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-931, 797.884)
-scale = Vector2(109.875, 17.0674)
+position = Vector2(-938.5, 862)
+scale = Vector2(122.437, 17.0674)
 texture = ExtResource("34_xe308")
+
+[node name="Area2D" type="Area2D" parent="Background/ConcreteWallDown"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown/Area2D"]
+position = Vector2(0.00816631, 3.01744)
+shape = SubResource("RectangleShape2D_xe308")
+
+[node name="ConcreteWallRight" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-77, 106)
+scale = Vector2(15.165, 90)
+texture = ExtResource("35_d3cha")
+
+[node name="Area2D" type="Area2D" parent="Background/ConcreteWallRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallRight/Area2D"]
+position = Vector2(4.50544, 0.927777)
+shape = SubResource("RectangleShape2D_i26dy")
+
+[node name="ConcreteWallLeft" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-1790.25, 127)
+scale = Vector2(14.56, 90)
+texture = ExtResource("36_i26dy")
+
+[node name="Area2D" type="Area2D" parent="Background/ConcreteWallLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallLeft/Area2D"]
+position = Vector2(-3.17651, -0.0444446)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lmoi6")
 
 [connection signal="attackCollide" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide"]
 [connection signal="attackCollideExit" from="BossCharacter" to="PlayerCharacter" method="_on_boss_attack_collide_exit"]
