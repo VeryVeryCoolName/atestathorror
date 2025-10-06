@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=51 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -209,10 +209,16 @@ animations = [{
 size = Vector2(16.171581, 9.491789)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwj6o"]
-size = Vector2(10.023079, 18.055555)
+size = Vector2(10.023079, 16.037258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3c8l"]
 size = Vector2(11.871582, 16.077778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0y5"]
+size = Vector2(15.984961, 9.814024)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a4tp"]
+size = Vector2(16.007513, 10.158916)
 
 [node name="game" type="Node2D"]
 
@@ -296,6 +302,7 @@ sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
 position = Vector2(-905, 92)
+collision_layer = 0
 
 [node name="Background" type="Node" parent="."]
 
@@ -316,20 +323,21 @@ shape = SubResource("RectangleShape2D_ym3tv")
 
 [node name="ConcreteWallRight" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-77, 127)
-scale = Vector2(15, 89.021)
+position = Vector2(-74.21999, -32.99996)
+scale = Vector2(14.7225, 108.00001)
 texture = ExtResource("35_d3cha")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallRight"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallRight/StaticBody2D"]
-position = Vector2(2.769534, 0.9722223)
+position = Vector2(2.7695343, -0.036925733)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_bwj6o")
 
 [node name="ConcreteWallLeft" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-1790, 127)
-scale = Vector2(14.402, 89.021)
+position = Vector2(-1790, -32.457985)
+scale = Vector2(14.402, 109.56776)
 texture = ExtResource("36_i26dy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallLeft"]
@@ -340,10 +348,32 @@ scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_f3c8l")
 
 [node name="ConcreteWallDown2" type="Sprite2D" parent="Background"]
+z_index = -1
 texture_filter = 1
-position = Vector2(-4078, -672)
-scale = Vector2(192.961, 25)
+position = Vector2(-2827, -1057.0001)
+scale = Vector2(132.875, 20.379)
 texture = ExtResource("34_xe308")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallDown2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown2/StaticBody2D"]
+position = Vector2(-3.8146973e-06, 3.1404953)
+scale = Vector2(0.99999976, 0.9999999)
+shape = SubResource("RectangleShape2D_bu0y5")
+
+[node name="ConcreteWallDown3" type="Sprite2D" parent="Background"]
+z_index = -1
+texture_filter = 1
+position = Vector2(963.908, -1057)
+scale = Vector2(133.73851, 20)
+texture = ExtResource("34_xe308")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallDown3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown3/StaticBody2D"]
+position = Vector2(0.029827766, 3.0000007)
+scale = Vector2(1.0000006, 1.0000002)
+shape = SubResource("RectangleShape2D_6a4tp")
 
 [node name="ConcreteFloor" type="Sprite2D" parent="Background"]
 light_mask = 5
