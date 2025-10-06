@@ -6,6 +6,7 @@ var distanceToPlayer = 1000
 var moveDirection = Vector2.ZERO
 var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
+var health := 100
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 
@@ -95,3 +96,14 @@ func _onCollision(_body: Node2D):
 	
 func _onCollisionExit(_body: Node2D):
 	attackCollideExit.emit()
+	
+func take_damage(amount: int):
+	health -= amount
+	print("Ai dat ", amount, " damage. HP ramas: ", health)
+	if health <= 0:
+		die()
+
+func die():
+	print("Boss defeated!")
+	death.emit()
+	queue_free()

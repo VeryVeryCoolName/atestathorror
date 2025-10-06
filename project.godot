@@ -33,6 +33,7 @@ project/assembly_name="atestathorror"
 [global_group]
 
 phase2boss=""
+player=""
 
 [input]
 

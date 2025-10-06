@@ -25,6 +25,11 @@ func _ready():
 	phase2Boss[0].attackHit.connect(_on_boss_attack_hit)
 	phase2Boss[0].attackCollide.connect(_on_boss_attack_collide)
 	phase2Boss[0].attackCollideExit.connect(_on_boss_attack_collide_exit)
+	$AttackArea.body_entered.connect(_on_attack_area_body_entered)
+	$AttackArea.body_entered.connect(func(body):
+		print("BODY ENTERED: ", body.name))
+	$AttackArea.body_exited.connect(func(body):
+		print("BODY EXITED: ", body.name))
 
 func set_health(value: int):
 	health = clamp(value, 0, MAX_HEALTH)
@@ -82,7 +87,15 @@ func attack():
 	attack_area.monitoring = false
 	attack_area.position = original_position
 	is_attacking = false
+
+func _on_attack_area_body_entered(body):
+	if not is_attacking:
+		return  # as zice return 0 dar nu stiu daca e rau
 	
+	if body.is_in_group("phase2boss"):
+		if body.has_method("take_damage"):
+			body.take_damage(20)
+
 func _on_boss_attack_hit():
 	if inAttack:
 		health -= 20  

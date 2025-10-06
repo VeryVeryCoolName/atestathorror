@@ -243,7 +243,7 @@ texture_under = ExtResource("3_exi56")
 texture_progress = ExtResource("4_7t8sx")
 script = ExtResource("3_iivbl")
 
-[node name="PlayerCharacter" type="CharacterBody2D" parent="."]
+[node name="PlayerCharacter" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-950, 566)
 collision_layer = 9
 collision_mask = 9
@@ -270,20 +270,22 @@ shape = SubResource("RectangleShape2D_2poj3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
 
-[node name="AttackArea" type="Area2D" parent="PlayerCharacter"]
+[node name="AttackArea" type="Area2D" parent="PlayerCharacter" groups=["player"]]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter/AttackArea" groups=["player"]]
 scale = Vector2(4.38376, -3.73666)
 shape = SubResource("RectangleShape2D_wrm1d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter/AttackArea"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerCharacter/AttackArea" groups=["player"]]
 texture_filter = 1
 scale = Vector2(6.265, 6.265)
 sprite_frames = SubResource("SpriteFrames_cwurv")
 animation = &"idle"
 
 [node name="BossCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-897, -2902)
+position = Vector2(-820, -337)
+collision_mask = 2
 script = ExtResource("16_ewbju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossCharacter"]
@@ -301,7 +303,7 @@ scale = Vector2(9.78, 9.78)
 sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
-position = Vector2(-905, 92)
+position = Vector2(-1043, -4247)
 collision_layer = 0
 
 [node name="Background" type="Node" parent="."]
