@@ -305,7 +305,7 @@ visibility_layer = 3
 z_index = -1
 texture_filter = 1
 position = Vector2(-946, 862.00006)
-scale = Vector2(122.437, 17.0674)
+scale = Vector2(143.48, 20)
 texture = ExtResource("34_xe308")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallDown"]
@@ -316,8 +316,8 @@ shape = SubResource("RectangleShape2D_ym3tv")
 
 [node name="ConcreteWallRight" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-77, 106)
-scale = Vector2(15.165, 90)
+position = Vector2(-77, 127)
+scale = Vector2(15, 89.021)
 texture = ExtResource("35_d3cha")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallRight"]
@@ -328,8 +328,8 @@ shape = SubResource("RectangleShape2D_bwj6o")
 
 [node name="ConcreteWallLeft" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-1790.25, 127)
-scale = Vector2(14.56, 90)
+position = Vector2(-1790, 127)
+scale = Vector2(14.402, 89.021)
 texture = ExtResource("36_i26dy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallLeft"]
@@ -339,12 +339,18 @@ position = Vector2(-4.064232, 0.050000668)
 scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_f3c8l")
 
+[node name="ConcreteWallDown2" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-4078, -672)
+scale = Vector2(192.961, 25)
+texture = ExtResource("34_xe308")
+
 [node name="ConcreteFloor" type="Sprite2D" parent="Background"]
 light_mask = 5
 z_index = -30
 texture_filter = 1
-position = Vector2(-938, 51)
-scale = Vector2(124.50001, 118.87499)
+position = Vector2(-938, -1907.5)
+scale = Vector2(124.50001, 363.6875)
 texture = ExtResource("39_bwj6o")
 
 [node name="ConcreteFloorTrash1" type="Sprite2D" parent="Background"]
