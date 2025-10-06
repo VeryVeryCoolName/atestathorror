@@ -13,17 +13,20 @@ script = ExtResource("1_4geyq")
 
 [node name="MainMenu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 265.0
-offset_top = 350.0
-offset_right = 1634.0
-offset_bottom = 700.0
+offset_left = 250.0
+offset_top = 600.0
+offset_right = 1619.0
+offset_bottom = 950.0
 theme_override_font_sizes/font_size = 250
 text = "Main Menu"
 
 [node name="Volume" type="HSlider" parent="."]
-layout_mode = 2
-offset_right = 1992.0
-offset_bottom = 364.0
+layout_mode = 0
+offset_left = 160.00002
+offset_top = 24.000006
+offset_right = 316.0
+offset_bottom = 73.59998
+scale = Vector2(10, 10)
 size_flags_vertical = 1
 size_flags_stretch_ratio = 20.0
 
