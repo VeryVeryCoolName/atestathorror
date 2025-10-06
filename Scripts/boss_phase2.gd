@@ -9,9 +9,7 @@ var moveSpeed = 10000
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 var animate = false
-
 var bossHealth = 100. #sa nu modifici numele la variabila asta daca faci boss hp
-
 var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
@@ -21,6 +19,7 @@ var attackFrameCounter = 0
 signal attackHit
 signal attackCollide
 signal attackCollideExit
+signal death
 
 var isRaging = false
 @onready var rageArea = $RageArea
@@ -135,3 +134,13 @@ func _on_animation_finished():
 		heal(10)
 		isCooldownFinished = true
 		animate = false
+func take_damage(amount: int):
+	bossHealth -= amount
+	print("Ai dat ", amount, " damage. HP ramas: ", bossHealth)
+	if bossHealth <= 0:
+		die()
+
+func die():
+	print("Boss defeated!")
+	death.emit()
+	queue_free()

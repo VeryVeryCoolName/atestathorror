@@ -245,8 +245,8 @@ script = ExtResource("3_iivbl")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-950, 566)
-collision_layer = 9
-collision_mask = 9
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_ebmjs")
 health_bar_path = NodePath("../Camera2D/CanvasLayer/Node2D/TextureProgressBar")
 
@@ -266,6 +266,8 @@ scale = Vector2(9.55, 9.55)
 texture = ExtResource("2_wrm1d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCharacter"]
+light_mask = 16
+visibility_layer = 16
 shape = SubResource("RectangleShape2D_2poj3")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="PlayerCharacter"]
@@ -304,7 +306,7 @@ sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
 position = Vector2(-1043, -4247)
-collision_layer = 0
+collision_mask = 2
 
 [node name="Background" type="Node" parent="."]
 

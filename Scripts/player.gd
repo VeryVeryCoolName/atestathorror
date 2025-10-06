@@ -89,16 +89,16 @@ func attack():
 	is_attacking = false
 
 func _on_attack_area_body_entered(body):
+	#if body.is_in_group("phase2boss"):
+	if body.has_method("take_damage"):
+		body.take_damage(20)
 	if not is_attacking:
 		return  # as zice return 0 dar nu stiu daca e rau
 	
-	if body.is_in_group("phase2boss"):
-		if body.has_method("take_damage"):
-			body.take_damage(20)
 
 func _on_boss_attack_hit():
 	if inAttack:
-		health -= 20  
+		health -= 1  
 
 func _on_boss_attack_collide():
 	inAttack = true
