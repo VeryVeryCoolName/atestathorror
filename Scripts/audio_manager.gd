@@ -7,10 +7,13 @@ var music_list = {
 	"menu": preload("res://music/mainmenu.mp3")
 }
 var sfx_list = {
-	"howl": preload("res://music/sfx/temp.mp3")
+	"howl": preload("res://music/sfx/temp.mp3"), 
+	"pause": preload("res://music/sfx/pause.wav"),
+	"unpause": preload("res://music/sfx/unpause.wav")
 }
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	streamplayer = AudioStreamPlayer.new()
 	add_child(streamplayer)
 	streamplayer.autoplay = false
@@ -18,6 +21,8 @@ func _ready():
 	sfx_player = AudioStreamPlayer.new()
 	add_child(sfx_player)
 	sfx_player.bus = "Master"
+	streamplayer.process_mode = Node.PROCESS_MODE_ALWAYS
+	sfx_player.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func play_stream(stream: AudioStream):
 	if stream != null:
@@ -31,7 +36,7 @@ func stop():
 func is_playing() -> bool:
 	return streamplayer.playing
 
-func play_sfx(sfx_stream: AudioStream, sfx_delay: float = 0.3, resume_delay: float = 0.3) -> void:
+func play_sfx(sfx_stream: AudioStream, sfx_delay: float = 0.01, resume_delay: float = 0.01) -> void:
 	if not streamplayer.playing:
 		return
 	var pos = streamplayer.get_playback_position()

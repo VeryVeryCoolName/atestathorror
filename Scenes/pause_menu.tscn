@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx4oifoj2nshr"]
+
+[ext_resource type="Shader" uid="uid://cn1hsodfoslyl" path="res://Shaders/pause_menu.gdshader" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://hu2bm5u8hpmg" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2c35"]
+shader = ExtResource("1_emv3i")
+shader_parameter/lod = 0.5630000267425
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_k0w1u")
+
+[node name="MenuRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="MenuRoot"]
+material = SubResource("ShaderMaterial_y2c35")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuRoot"]
+modulate = Color(0.4956519, 0.6013042, 0.86662465, 1)
+layout_mode = 0
+offset_left = 300.0
+offset_top = 120.0
+offset_right = 1580.0
+offset_bottom = 840.0
+
+[node name="resume" type="Button" parent="MenuRoot"]
+modulate = Color(0.80453676, 0.6865441, 0.93463844, 1)
+layout_mode = 0
+offset_left = 650.0
+offset_top = 400.0
+offset_right = 1250.0
+offset_bottom = 518.0
+theme_override_font_sizes/font_size = 80
+text = "Resume"
+
+[node name="quit" type="Button" parent="MenuRoot"]
+modulate = Color(0.8039216, 0.6862745, 0.93333334, 1)
+layout_mode = 0
+offset_left = 650.0
+offset_top = 530.0
+offset_right = 1250.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 80
+text = "Quit"
+
+[node name="Label" type="Label" parent="MenuRoot"]
+modulate = Color(0.8039216, 0.6862745, 0.93333334, 1)
+texture_filter = 5
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 0
+offset_left = 500.0
+offset_top = 220.0
+offset_right = 696.4
+offset_bottom = 244.6
+scale = Vector2(5, 5)
+text = "The game is now paused!"
+
+[connection signal="pressed" from="MenuRoot/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuRoot/quit" to="." method="_on_quit_pressed"]
