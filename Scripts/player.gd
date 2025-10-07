@@ -98,7 +98,7 @@ func _on_attack_area_body_entered(body):
 
 func _on_boss_attack_hit():
 	if inAttack:
-		health -= 1  
+		health -= 12  
 
 func _on_boss_attack_collide():
 	inAttack = true
