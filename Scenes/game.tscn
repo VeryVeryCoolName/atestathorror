@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=52 format=3 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmfppserce2q" path="res://Assets/Sprites/Env/concrete floor_trash1.png" id="38_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://ctodk63x007a0" path="res://Assets/Sprites/Env/concrete floor.png" id="39_bwj6o"]
 [ext_resource type="Texture2D" uid="uid://camb1h8saivpd" path="res://Assets/Sprites/Env/concrete floor_trash2.png" id="40_bwj6o"]
+[ext_resource type="PackedScene" uid="uid://cx4oifoj2nshr" path="res://Scenes/pause_menu.tscn" id="40_f3c8l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -307,6 +308,8 @@ sprite_frames = SubResource("SpriteFrames_bwj6o")
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
 position = Vector2(-1043, -4247)
 collision_mask = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("40_f3c8l")]
 
 [node name="Background" type="Node" parent="."]
 
