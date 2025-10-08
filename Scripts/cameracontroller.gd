@@ -1,5 +1,5 @@
 extends Camera2D
-@export var board_size := Vector2(1980, 1080) # nu merge bine???? nu stiu de ce
+@export var board_size := Vector2(1920, 1080) # nu merge bine???? nu stiu de ce
 @export var transition_time := 0.3
 @export var player_path: NodePath
 var current_board := Vector2.ZERO
