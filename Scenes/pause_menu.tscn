@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx4oifoj2nshr"]
+[gd_scene load_steps=5 format=3 uid="uid://cx4oifoj2nshr"]
 
 [ext_resource type="Shader" uid="uid://cn1hsodfoslyl" path="res://Shaders/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://hu2bm5u8hpmg" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
@@ -6,6 +6,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2c35"]
 shader = ExtResource("1_emv3i")
 shader_parameter/lod = 0.5630000267425
+
+[sub_resource type="LabelSettings" id="LabelSettings_k0w1u"]
+font_size = 90
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -56,12 +59,12 @@ modulate = Color(0.8039216, 0.6862745, 0.93333334, 1)
 texture_filter = 5
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = 500.0
-offset_top = 220.0
-offset_right = 696.4
-offset_bottom = 244.6
-scale = Vector2(5, 5)
+offset_left = 410.0
+offset_top = 222.0
+offset_right = 1500.0
+offset_bottom = 346.0
 text = "The game is now paused!"
+label_settings = SubResource("LabelSettings_k0w1u")
 
 [connection signal="pressed" from="MenuRoot/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MenuRoot/quit" to="." method="_on_quit_pressed"]
