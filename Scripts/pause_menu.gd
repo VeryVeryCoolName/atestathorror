@@ -4,8 +4,8 @@ var pausesfx = AudioManager.sfx_list["pause"]
 var unpausesfx = AudioManager.sfx_list["unpause"]
 
 func _ready():
-	$MenuRoot.hide()
-	process_mode = Node.PROCESS_MODE_ALWAYS 
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	$MenuRoot.hide() 
 
 func pause():
 	$MenuRoot.show()
@@ -19,6 +19,7 @@ func escapekey():
 	if Input.is_action_just_pressed("Pause"):
 		if get_tree().paused:
 			resume()
+			await get_tree().create_timer(0.1).timeout
 			AudioManager.play_sfx(unpausesfx)
 		else:
 			AudioManager.play_sfx(pausesfx)
@@ -29,6 +30,7 @@ func _process(_delta):
 
 func _on_resume_pressed():
 	resume()
+	await get_tree().create_timer(0.1).timeout
 	AudioManager.play_sfx(unpausesfx)
 
 func _on_quit_pressed():

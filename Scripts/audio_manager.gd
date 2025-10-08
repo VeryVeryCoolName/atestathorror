@@ -13,7 +13,7 @@ var sfx_list = {
 }
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	#process_mode = Node.PROCESS_MODE_ALWAYS
 	streamplayer = AudioStreamPlayer.new()
 	add_child(streamplayer)
 	streamplayer.autoplay = false
@@ -21,8 +21,8 @@ func _ready():
 	sfx_player = AudioStreamPlayer.new()
 	add_child(sfx_player)
 	sfx_player.bus = "Master"
-	streamplayer.process_mode = Node.PROCESS_MODE_ALWAYS
-	sfx_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	#streamplayer.process_mode = Node.PROCESS_MODE_ALWAYS
+	#sfx_player.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func play_stream(stream: AudioStream):
 	if stream != null:
