@@ -207,19 +207,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ym3tv"]
-size = Vector2(16.171581, 9.491789)
+size = Vector2(16.1716, 9.49179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwj6o"]
-size = Vector2(10.023079, 16.037258)
+size = Vector2(10.0231, 16.0373)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3c8l"]
-size = Vector2(11.871582, 16.077778)
+size = Vector2(11.8716, 16.0778)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu0y5"]
-size = Vector2(15.984961, 9.814024)
+size = Vector2(15.985, 9.81402)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a4tp"]
-size = Vector2(16.007513, 10.158916)
+size = Vector2(16.0075, 10.1589)
 
 [node name="game" type="Node2D"]
 
@@ -306,7 +306,7 @@ scale = Vector2(9.78, 9.78)
 sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
-position = Vector2(-1043, -4247)
+position = Vector2(-1042.38, 5000)
 collision_mask = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("40_f3c8l")]
@@ -318,7 +318,7 @@ light_mask = 31
 visibility_layer = 31
 z_index = -1
 texture_filter = 1
-position = Vector2(-946, 862.00006)
+position = Vector2(-946, 862)
 scale = Vector2(143.48, 20)
 texture = ExtResource("34_xe308")
 
@@ -331,13 +331,13 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown/StaticBody2D"]
 light_mask = 31
 visibility_layer = 31
-position = Vector2(0.040835857, 3.3396797)
+position = Vector2(0.0408359, 3.33968)
 shape = SubResource("RectangleShape2D_ym3tv")
 
 [node name="ConcreteWallRight" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-74.21999, -32.99996)
-scale = Vector2(14.7225, 108.00001)
+position = Vector2(-74.22, -33)
+scale = Vector2(14.7225, 108)
 texture = ExtResource("35_d3cha")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallRight"]
@@ -345,14 +345,14 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallRight/StaticBody2D"]
-position = Vector2(2.7695343, -0.036925733)
-scale = Vector2(0.9999999, 0.9999999)
+position = Vector2(2.76953, -0.0369257)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bwj6o")
 
 [node name="ConcreteWallLeft" type="Sprite2D" parent="Background"]
 texture_filter = 1
-position = Vector2(-1790, -32.457985)
-scale = Vector2(14.402, 109.56776)
+position = Vector2(-1790, -32.458)
+scale = Vector2(14.402, 109.568)
 texture = ExtResource("36_i26dy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallLeft"]
@@ -360,14 +360,14 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallLeft/StaticBody2D"]
-position = Vector2(-4.064232, 0.050000668)
-scale = Vector2(1.0000002, 1)
+position = Vector2(-4.06423, 0.0500007)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f3c8l")
 
 [node name="ConcreteWallDown2" type="Sprite2D" parent="Background"]
 z_index = -1
 texture_filter = 1
-position = Vector2(-2827, -1057.0001)
+position = Vector2(-2827, -1057)
 scale = Vector2(132.875, 20.379)
 texture = ExtResource("34_xe308")
 
@@ -376,15 +376,15 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown2/StaticBody2D"]
-position = Vector2(-3.8146973e-06, 3.1404953)
-scale = Vector2(0.99999976, 0.9999999)
+position = Vector2(-3.8147e-06, 3.1405)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bu0y5")
 
 [node name="ConcreteWallDown3" type="Sprite2D" parent="Background"]
 z_index = -1
 texture_filter = 1
 position = Vector2(963.908, -1057)
-scale = Vector2(133.73851, 20)
+scale = Vector2(133.739, 20)
 texture = ExtResource("34_xe308")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/ConcreteWallDown3"]
@@ -392,8 +392,8 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/ConcreteWallDown3/StaticBody2D"]
-position = Vector2(0.029827766, 3.0000007)
-scale = Vector2(1.0000006, 1.0000002)
+position = Vector2(0.0298278, 3)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6a4tp")
 
 [node name="ConcreteFloor" type="Sprite2D" parent="Background"]
@@ -401,28 +401,28 @@ light_mask = 5
 z_index = -30
 texture_filter = 1
 position = Vector2(-938, -1907.5)
-scale = Vector2(124.50001, 363.6875)
+scale = Vector2(124.5, 363.688)
 texture = ExtResource("39_bwj6o")
 
 [node name="ConcreteFloorTrash1" type="Sprite2D" parent="Background"]
 z_index = -2
 texture_filter = 1
-position = Vector2(-1187.0001, 395.00003)
-scale = Vector2(11.250001, 10.531248)
+position = Vector2(-1187, 395)
+scale = Vector2(11.25, 10.5312)
 texture = ExtResource("38_ym3tv")
 
 [node name="ConcreteFloorTrash2" type="Sprite2D" parent="Background"]
 z_index = -2
 texture_filter = 1
 position = Vector2(-542, -243)
-scale = Vector2(10.937499, 9.812499)
+scale = Vector2(10.9375, 9.8125)
 texture = ExtResource("38_ym3tv")
 
 [node name="ConcreteFloorTrash3" type="Sprite2D" parent="Background"]
 z_index = -2
 texture_filter = 1
 position = Vector2(-374, 677)
-scale = Vector2(11.562503, 11.624994)
+scale = Vector2(11.5625, 11.625)
 texture = ExtResource("40_bwj6o")
 
 [node name="ConcreteFloorTrash4" type="Sprite2D" parent="Background"]
