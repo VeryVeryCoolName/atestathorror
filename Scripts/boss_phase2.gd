@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_parent().get_node("PlayerCharacter")
 var state = "idle"
-var distanceToPlayer = 1000
+var distanceToPlayer = 5000.0
 var moveDirection = Vector2.ZERO
 var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
@@ -31,6 +31,8 @@ func _process(_delta):
 		animatedsprite.hide()
 		motionlesssprite.show()
 		if player:
+			distanceToPlayer = global_transform.origin.distance_to(player.global_transform.origin)
+		if distanceToPlayer < 2000.0:
 			state = "move"
 	if state == "move":
 		var playerPosition = player.position
@@ -134,6 +136,8 @@ func _on_animation_finished():
 		heal(10)
 		isCooldownFinished = true
 		animate = false
+		isRaging = false
+
 func take_damage(amount: int):
 	bossHealth -= amount
 	print("Ai dat ", amount, " damage. HP ramas: ", bossHealth)

@@ -10,7 +10,7 @@ var health := 100
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 
-var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
+var attackScene = preload("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
 var isCooldownFinished = true
@@ -20,6 +20,8 @@ signal attackCollide
 signal attackCollideExit
 
 signal death
+
+@onready var bossPhase2 = get_parent().get_node("Phase2Character")
 
 func _process(_delta):
 	if state == "idle":
@@ -105,5 +107,6 @@ func take_damage(amount: int):
 
 func die():
 	print("Boss defeated!")
+	bossPhase2.global_position = position
 	death.emit()
 	queue_free()
