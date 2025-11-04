@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://qt58swgp7716"]
+[gd_scene load_steps=49 format=4 uid="uid://qt58swgp7716"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -10,8 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bp82wrm86omaj" path="res://Assets/Sprites/Player/hp_progress.png" id="4_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://dnrg3w4egmg4r" path="res://Assets/Sprites/Player/Movement/piggy_pc_down2.png" id="4_ewbju"]
 [ext_resource type="Texture2D" uid="uid://c4yjhdd5ec0w2" path="res://Assets/Sprites/Player/Movement/piggy_pc_left2.png" id="5_85qyi"]
+[ext_resource type="Texture2D" uid="uid://cve4a443flcw3" path="res://Assets/Sprites/Enemies/hp_boss_under.png" id="5_ym3tv"]
+[ext_resource type="Texture2D" uid="uid://drnt50nqcvj5u" path="res://Assets/Sprites/Enemies/hp_boss_over.png" id="6_bwj6o"]
 [ext_resource type="Texture2D" uid="uid://4oymy3oklj2f" path="res://Assets/Sprites/Player/Movement/piggy_pc_left1.png" id="6_iivbl"]
 [ext_resource type="Texture2D" uid="uid://jad7wa6qmxwd" path="res://Assets/Sprites/Player/Movement/piggy_pc_left3.png" id="7_7nbq1"]
+[ext_resource type="Texture2D" uid="uid://dy1sy01axxep3" path="res://Assets/Sprites/Enemies/hp_boss_progress.png" id="7_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://c0ewaqrl7amcj" path="res://Assets/Sprites/Player/Movement/piggy_pc_right2.png" id="8_exi56"]
 [ext_resource type="Texture2D" uid="uid://b6m0brmvr7110" path="res://Assets/Sprites/Player/Movement/piggy_pc_right1.png" id="9_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://ckdbv44aheqsv" path="res://Assets/Sprites/Player/Movement/piggy_pc_right3.png" id="10_mg4q0"]
@@ -893,6 +896,7 @@ position = Vector2(175, 75)
 scale = Vector2(4, 4)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/CanvasLayer/Node2D"]
+texture_filter = 1
 offset_left = -32.0
 offset_top = -8.0
 offset_right = 32.0
@@ -900,6 +904,34 @@ offset_bottom = 8.0
 value = 100.0
 texture_under = ExtResource("3_exi56")
 texture_progress = ExtResource("4_7t8sx")
+script = ExtResource("3_iivbl")
+
+[node name="BossHpBar" type="Node2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(704, 900)
+scale = Vector2(4, 4)
+
+[node name="BossHpBarTexture" type="TextureProgressBar" parent="Camera2D/CanvasLayer/BossHpBar"]
+texture_filter = 1
+offset_right = 128.0
+offset_bottom = 16.0
+value = 100.0
+texture_under = ExtResource("5_ym3tv")
+texture_over = ExtResource("6_bwj6o")
+texture_progress = ExtResource("7_f3c8l")
+script = ExtResource("3_iivbl")
+
+[node name="BossHpBarPhase2" type="Node2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(704, 900)
+scale = Vector2(4, 4)
+
+[node name="BossHpBarTexture" type="TextureProgressBar" parent="Camera2D/CanvasLayer/BossHpBarPhase2"]
+texture_filter = 1
+offset_right = 128.0
+offset_bottom = 16.0
+value = 100.0
+texture_under = ExtResource("5_ym3tv")
+texture_over = ExtResource("6_bwj6o")
+texture_progress = ExtResource("7_f3c8l")
 script = ExtResource("3_iivbl")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="." groups=["player"]]
@@ -948,6 +980,7 @@ animation = &"idle"
 position = Vector2(-820, -337)
 collision_mask = 2
 script = ExtResource("16_ewbju")
+healthBarPath = NodePath("../Camera2D/CanvasLayer/BossHpBar/BossHpBarTexture")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossCharacter"]
 scale = Vector2(9.78, 9.78)
@@ -966,6 +999,7 @@ sprite_frames = SubResource("SpriteFrames_bwj6o")
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
 position = Vector2(-1042.38, 5000)
 collision_mask = 2
+healthBarPath = NodePath("../Camera2D/CanvasLayer/BossHpBarPhase2/BossHpBarTexture")
 
 [node name="PauseMenu" parent="." instance=ExtResource("40_f3c8l")]
 
