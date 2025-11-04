@@ -6,7 +6,11 @@ var distanceToPlayer = 1000
 var moveDirection = Vector2.ZERO
 var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
-var health := 100
+const maxHealth = 100
+var health = 100
+@export_node_path("TextureProgressBar") var healthBarPath
+var healthBar : TextureProgressBar
+
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 
@@ -22,6 +26,13 @@ signal attackCollideExit
 signal death
 
 @onready var bossPhase2 = get_parent().get_node("Phase2Character")
+
+func _ready():
+	if healthBarPath:
+		healthBar = get_node(healthBarPath)
+		healthBar.get_parent().show()
+		healthBar.max_value = maxHealth
+		healthBar.value = health
 
 func _process(_delta):
 	if state == "idle":
@@ -101,12 +112,16 @@ func _onCollisionExit(_body: Node2D):
 	
 func take_damage(amount: int):
 	health -= amount
+	if healthBar:
+		healthBar.value = health
 	print("Ai dat ", amount, " damage. HP ramas: ", health)
 	if health <= 0:
 		die()
 
 func die():
 	print("Boss defeated!")
+	if healthBar:
+		healthBar.get_parent().hide()
 	bossPhase2.global_position = position
 	death.emit()
 	queue_free()

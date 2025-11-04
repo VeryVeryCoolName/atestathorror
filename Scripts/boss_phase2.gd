@@ -9,7 +9,10 @@ var moveSpeed = 10000
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 var animate = false
+const maxHealth = 100
 var bossHealth = 100. #sa nu modifici numele la variabila asta daca faci boss hp
+@export_node_path("TextureProgressBar") var healthBarPath
+var healthBar : TextureProgressBar
 var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
@@ -25,6 +28,13 @@ var isRaging = false
 @onready var rageArea = $RageArea
 @onready var rageCollisionShape = rageArea.get_child(0)
 
+func _ready():
+	if healthBarPath:
+		healthBar = get_node(healthBarPath)
+		healthBar.get_parent().hide()
+		healthBar.max_value = maxHealth
+		healthBar.value = bossHealth
+
 func _process(_delta):
 	if state == "idle":
 		animatedsprite.play("default")
@@ -35,6 +45,8 @@ func _process(_delta):
 		if distanceToPlayer < 2000.0:
 			state = "move"
 	if state == "move":
+		if healthBar:
+			healthBar.get_parent().show()
 		var playerPosition = player.position
 		moveDirection.x = playerPosition.x - position.x
 		moveDirection.y = playerPosition.y - position.y
@@ -85,8 +97,8 @@ func rage():
 	pass
 	
 func heal(healAmount: float):
-	if bossHealth + healAmount > 100:
-		bossHealth = 100
+	if bossHealth + healAmount > maxHealth:
+		bossHealth = maxHealth
 	else: bossHealth += healAmount
 	pass
 
@@ -140,11 +152,15 @@ func _on_animation_finished():
 
 func take_damage(amount: int):
 	bossHealth -= amount
+	if healthBar:
+		healthBar.value = bossHealth
 	print("Ai dat ", amount, " damage. HP ramas: ", bossHealth)
 	if bossHealth <= 0:
 		die()
 
 func die():
 	print("Boss defeated!")
+	if healthBar:
+		healthBar.get_parent().hide()
 	death.emit()
 	queue_free()
