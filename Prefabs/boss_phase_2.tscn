@@ -156,7 +156,7 @@ shape = SubResource("RectangleShape2D_ahqnb")
 texture_filter = 1
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_msr80")
-animation = &"walking_up"
+animation = &"walking_down"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -164,6 +164,8 @@ scale = Vector2(7, 7)
 texture = ExtResource("2_40vci")
 
 [node name="RageArea" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
 
 [node name="RageCollision" type="CollisionShape2D" parent="RageArea"]
 position = Vector2(0.5, -1)
