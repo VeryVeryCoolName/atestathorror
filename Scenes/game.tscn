@@ -1574,8 +1574,6 @@ animation = &"idle"
 
 [node name="BossCharacter" type="CharacterBody2D" parent="."]
 position = Vector2(-820, -337)
-collision_layer = 9
-collision_mask = 9
 script = ExtResource("16_ewbju")
 healthBarPath = NodePath("../Camera2D/CanvasLayer/BossHpBar/BossHpBarTexture")
 
@@ -1595,8 +1593,6 @@ sprite_frames = SubResource("SpriteFrames_bwj6o")
 
 [node name="Phase2Character" parent="." instance=ExtResource("33_oeip8")]
 position = Vector2(-1042.38, 5000)
-collision_layer = 9
-collision_mask = 9
 healthBarPath = NodePath("../Camera2D/CanvasLayer/BossHpBarPhase2/BossHpBarTexture")
 
 [node name="PauseMenu" parent="." instance=ExtResource("40_f3c8l")]
