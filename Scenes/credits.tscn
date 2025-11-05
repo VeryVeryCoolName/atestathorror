@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://qq53fo426hkf"]
+
+[ext_resource type="Script" uid="uid://76gaj3ej202x" path="res://Scripts/settings.gd" id="1_r18jl"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 600.0
+offset_right = 1619.0
+offset_bottom = 950.0
+theme_override_font_sizes/font_size = 250
+text = "Main Menu"
+script = ExtResource("1_r18jl")
+
+[connection signal="pressed" from="MainMenu" to="MainMenu" method="_on_pressed"]

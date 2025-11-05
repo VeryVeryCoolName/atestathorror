@@ -29,12 +29,21 @@ offset_bottom = 550.0
 theme_override_font_sizes/font_size = 80
 text = "Settings"
 
-[node name="Quit" type="Button" parent="."]
+[node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 600.0
 offset_right = 700.0
-offset_bottom = 700.0
+offset_bottom = 718.0
+theme_override_font_sizes/font_size = 80
+text = "Credits"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 750.0
+offset_right = 700.0
+offset_bottom = 868.0
 theme_override_font_sizes/font_size = 80
 text = "Quit"
 
@@ -46,4 +55,5 @@ text = "1920 x 1080 REQUIRED"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
