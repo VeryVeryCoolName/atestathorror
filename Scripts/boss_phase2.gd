@@ -87,7 +87,7 @@ func _process(_delta):
 		animatedsprite.play("walking_left")
 	print(state)
 	print(isCooldownFinished)
-	print(animate)
+	print(isRaging)
 	pass
 
 func _physics_process(delta):
