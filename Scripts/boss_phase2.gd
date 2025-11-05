@@ -6,13 +6,16 @@ var distanceToPlayer = 5000.0
 var moveDirection = Vector2.ZERO
 var attackDirection = Vector2.ZERO
 var moveSpeed = 10000
+
 @onready var animatedsprite = $AnimatedSprite2D
 @onready var motionlesssprite = $Sprite2D
 var animate = false
+
 const maxHealth = 100
 var bossHealth = 100. #sa nu modifici numele la variabila asta daca faci boss hp
 @export_node_path("TextureProgressBar") var healthBarPath
 var healthBar : TextureProgressBar
+
 var attackScene = load("res://Prefabs/wolf_claw_attack.tscn")
 var attack_animatedsprite : AnimatedSprite2D
 var attack
@@ -34,6 +37,8 @@ func _ready():
 		healthBar.get_parent().hide()
 		healthBar.max_value = maxHealth
 		healthBar.value = bossHealth
+	rageArea.body_entered.connect(_onRageCollision)
+	rageArea.body_exited.connect(_onRageCollisionExit)
 
 func _process(_delta):
 	if state == "idle":
@@ -56,7 +61,8 @@ func _process(_delta):
 		attackChoice = randfn(0.0, 1.0)
 		if attackChoice < 0.2:
 			rage()
-		else: startAttack()
+		else:
+			startAttack()
 		state = "cooldown"
 	if state == "cooldown":
 		moveDirection = Vector2.ZERO
@@ -65,7 +71,7 @@ func _process(_delta):
 	if attackFrameCounter == 3:
 		attackHit.emit()
 		attackFrameCounter = 0
-	if velocity.x + velocity.y != 0 or animate == true:
+	if velocity.x*velocity.x + velocity.y*velocity.y != 0 or animate == true:
 		animatedsprite.show()
 		motionlesssprite.hide()
 	else:
@@ -79,6 +85,9 @@ func _process(_delta):
 		animatedsprite.play("walking_right")
 	elif velocity.x < 0:
 		animatedsprite.play("walking_left")
+	print(state)
+	print(isCooldownFinished)
+	print(animate)
 	pass
 
 func _physics_process(delta):
@@ -92,8 +101,6 @@ func rage():
 	isCooldownFinished = false
 	isRaging = true
 	rageCollisionShape.disabled = false
-	rageArea.body_entered.connect(_onRageCollision)
-	rageArea.body_exited.connect(_onRageCollisionExit)
 	pass
 	
 func heal(healAmount: float):
@@ -123,9 +130,6 @@ func _finishAttack():
 	attackFrameCounter = 0
 	isCooldownFinished = true
 	pass
-
-# La ultimele astea 3 o sa dau mald cand facem phase 2
-# (ca o sa aiba mai multe tipuri de atac)
 	
 func _onAttackFrameChange():
 	attackFrameCounter += 1
@@ -147,8 +151,8 @@ func _on_animation_finished():
 		rageCollisionShape.disabled = true
 		heal(10)
 		isCooldownFinished = true
-		animate = false
 		isRaging = false
+	animate = false
 
 func take_damage(amount: int):
 	bossHealth -= amount

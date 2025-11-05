@@ -1,6 +1,6 @@
 class_name PlayerCharacter extends CharacterBody2D
 @export var offset := 86
-@export var movespeed : float = 65000.0
+@export var movespeed : float = 40000.0
 @export_node_path("TextureProgressBar") var health_bar_path
 var direction: Vector2 = Vector2.ZERO
 var cardinaldirection: Vector2 = Vector2.DOWN
