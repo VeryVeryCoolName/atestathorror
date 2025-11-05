@@ -7,7 +7,7 @@ var music_list = {
 	"menu": preload("res://music/mainmenu.mp3")
 }
 var sfx_list = {
-	"howl": preload("res://music/sfx/temp.mp3"), 
+	"howl": preload("res://music/sfx/howl.mp3"), 
 	"pause": preload("res://music/sfx/pause.wav"),
 	"unpause": preload("res://music/sfx/unpause.wav")
 }
