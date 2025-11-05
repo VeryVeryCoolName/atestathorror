@@ -37,7 +37,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_40vci")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -57,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_qv6eb")
 }],
-"loop": true,
+"loop": false,
 "name": &"rage",
 "speed": 5.0
 }, {
@@ -156,6 +156,7 @@ shape = SubResource("RectangleShape2D_ahqnb")
 texture_filter = 1
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_msr80")
+animation = &"rage"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
