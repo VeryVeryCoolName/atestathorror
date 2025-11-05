@@ -45,6 +45,7 @@ func _process(_delta):
 		animatedsprite.play("default")
 		animatedsprite.hide()
 		motionlesssprite.show()
+		attackChoice = -1
 		if player:
 			distanceToPlayer = global_transform.origin.distance_to(player.global_transform.origin)
 		if distanceToPlayer < 2000.0:
@@ -58,11 +59,12 @@ func _process(_delta):
 		if moveDirection.length() < 225:
 			state = "attack"
 	if state == "attack":
-		attackChoice = randfn(0.0, 1.0)
-		if attackChoice < 0.2:
-			rage()
-		else:
-			startAttack()
+		attackChoice = randf()
+		if attackChoice >= 0:
+			if attackChoice < 0.3:
+				rage()
+			else:
+				startAttack()
 		state = "cooldown"
 	if state == "cooldown":
 		moveDirection = Vector2.ZERO
@@ -85,9 +87,6 @@ func _process(_delta):
 		animatedsprite.play("walking_right")
 	elif velocity.x < 0:
 		animatedsprite.play("walking_left")
-	print(state)
-	print(isCooldownFinished)
-	print(isRaging)
 	pass
 
 func _physics_process(delta):
@@ -97,6 +96,7 @@ func _physics_process(delta):
 
 func rage():
 	animate = true
+	animatedsprite.stop()
 	animatedsprite.play("rage")
 	isCooldownFinished = false
 	isRaging = true
@@ -107,6 +107,8 @@ func heal(healAmount: float):
 	if bossHealth + healAmount > maxHealth:
 		bossHealth = maxHealth
 	else: bossHealth += healAmount
+	if healthBar:
+		healthBar.value = bossHealth
 	pass
 
 func startAttack():
@@ -152,7 +154,7 @@ func _on_animation_finished():
 		heal(10)
 		isCooldownFinished = true
 		isRaging = false
-	animate = false
+		animate = false
 
 func take_damage(amount: int):
 	bossHealth -= amount
