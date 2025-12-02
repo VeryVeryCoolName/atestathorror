@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://clavyn4086ofh"]
+
+[ext_resource type="Script" uid="uid://bhjyarfw2tpc5" path="res://Scenes/Into_Cutscene_Text_Fade.gd" id="1_v2ywt"]
+
+[sub_resource type="Animation" id="Animation_v2ywt"]
+resource_name = "fade_in"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_exhv1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2vi6"]
+_data = {
+&"RESET": SubResource("Animation_exhv1"),
+&"fade_in": SubResource("Animation_v2ywt")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1870.0
+offset_bottom = 1050.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Once upon a time there were three little piggies.
+
+The first pig built his house out of straw, the second out of sticks, and the third out of bricks.
+
+But then the Big Bad Wolf came knocking, and one by one the piggies were eaten, until only the last pig remained.
+
+It was no longer about surviving. He wanted to avenge his brothers, so he took up his knife and got ready for the Wolf's arrival."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 790.0
+offset_right = 800.0
+offset_bottom = 890.0
+theme_override_font_sizes/normal_font_size = 50
+text = "This little piggy went to war."
+script = ExtResource("1_v2ywt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel2"]
+libraries = {
+&"": SubResource("AnimationLibrary_h2vi6")
+}
