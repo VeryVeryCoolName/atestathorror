@@ -6,7 +6,7 @@ func _ready():
 		AudioManager.play_stream(target_stream)
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/intro_lore.tscn")
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/settings.tscn")

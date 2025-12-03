@@ -1,5 +1,6 @@
 extends Node
 
+@export var introtimer = 18 
 @export var animationPlayer1 : AnimationPlayer
 @export var animationPlayer2 : AnimationPlayer
 @export var animationPlayer3 : AnimationPlayer
@@ -12,3 +13,5 @@ func _ready():
 	animationPlayer3.play("fade_in3")
 	animationPlayer4.play("fade_in4")
 	animationPlayer5.play("fade_in5")
+	await get_tree().create_timer(introtimer).timeout
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
