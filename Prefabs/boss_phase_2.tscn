@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"rage",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -156,7 +156,7 @@ shape = SubResource("RectangleShape2D_ahqnb")
 texture_filter = 1
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_msr80")
-animation = &"walking_down"
+animation = &"rage"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
