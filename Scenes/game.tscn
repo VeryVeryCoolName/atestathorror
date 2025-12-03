@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://44b53rjomdyn"]
+[gd_scene load_steps=64 format=4 uid="uid://44b53rjomdyn"]
 
 [ext_resource type="Script" uid="uid://bk6bio18r35n4" path="res://Scripts/player.gd" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://d3gstux5dn6sj" path="res://Scripts/cameracontroller.gd" id="1_nnt18"]
@@ -44,6 +44,11 @@
 [ext_resource type="Texture2D" uid="uid://bfihw8lexr66o" path="res://Assets/Tilemaps/Floor.png" id="41_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://b7h38lkpgup0h" path="res://Assets/Tilemaps/Tree1.png" id="42_631el"]
 [ext_resource type="Texture2D" uid="uid://babmyfn875mb4" path="res://Assets/Tilemaps/Decor.png" id="44_631el"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_631el"]
+font_size = 120
+font_color = Color(0.10155517, 0.014846165, 0.022739103, 1)
+outline_size = 10
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2poj3"]
 animations = [{
@@ -1921,6 +1926,15 @@ texture_over = ExtResource("6_bwj6o")
 texture_progress = ExtResource("7_f3c8l")
 script = ExtResource("3_iivbl")
 
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/BossHpBar"]
+offset_left = 37.0
+offset_top = 13.0
+offset_right = 545.0
+offset_bottom = 178.0
+scale = Vector2(0.1, 0.1)
+text = "The Wolf"
+label_settings = SubResource("LabelSettings_631el")
+
 [node name="BossHpBarPhase2" type="Node2D" parent="Camera2D/CanvasLayer"]
 position = Vector2(704, 900)
 scale = Vector2(4, 4)
@@ -1934,6 +1948,15 @@ texture_under = ExtResource("5_ym3tv")
 texture_over = ExtResource("6_bwj6o")
 texture_progress = ExtResource("7_f3c8l")
 script = ExtResource("3_iivbl")
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/BossHpBarPhase2"]
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 988.0
+offset_bottom = 178.0
+scale = Vector2(0.1, 0.1)
+text = "The Big Bad Wolf"
+label_settings = SubResource("LabelSettings_631el")
 
 [node name="PlayerCharacter" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-950, 550)
