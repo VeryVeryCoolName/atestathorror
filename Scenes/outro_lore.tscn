@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4vatlqgqdc7m"]
+[gd_scene load_steps=9 format=3 uid="uid://dod8mrqf6yrjw"]
 
 [ext_resource type="Script" uid="uid://bhjyarfw2tpc5" path="res://Scripts/Into_Cutscene_Text_Fade.gd" id="1_ol1mj"]
 
@@ -166,7 +166,7 @@ offset_top = 375.0
 offset_right = 1870.0
 offset_bottom = 525.0
 theme_override_font_sizes/normal_font_size = 50
-text = "His brick house remained, a painful reminder of what the Wolf had taken. The pig lived on too. He was alone, but he wouldn't let the Wolf win."
+text = "His brick house remained, a painful reminder of what the Wolf had taken. The pig lived on too. He was alone, but he was alive."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel4"]
 libraries = {
