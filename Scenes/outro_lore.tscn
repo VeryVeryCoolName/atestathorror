@@ -1,0 +1,189 @@
+[gd_scene load_steps=9 format=3 uid="uid://dod8mrqf6yrjw"]
+
+[ext_resource type="Script" uid="uid://bhjyarfw2tpc5" path="res://Scripts/Into_Cutscene_Text_Fade.gd" id="1_ol1mj"]
+
+[sub_resource type="Animation" id="Animation_exhv1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v2ywt"]
+resource_name = "fade_in1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h2vi6"]
+resource_name = "fade_in2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3f3p2"]
+resource_name = "fade_in3"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_exs7l"]
+resource_name = "fade_in4"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bwek8"]
+resource_name = "fade_in5"
+length = 14.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(13.033334, 14.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2vi6"]
+_data = {
+&"RESET": SubResource("Animation_exhv1"),
+&"fade_in1": SubResource("Animation_v2ywt"),
+&"fade_in2": SubResource("Animation_h2vi6"),
+&"fade_in3": SubResource("Animation_3f3p2"),
+&"fade_in4": SubResource("Animation_exs7l"),
+&"fade_in5": SubResource("Animation_bwek8")
+}
+
+[node name="Control" type="Control" node_paths=PackedStringArray("animationPlayer1", "animationPlayer2", "animationPlayer3", "animationPlayer4", "animationPlayer5")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ol1mj")
+animationPlayer1 = NodePath("RichTextLabel6/AnimationPlayer")
+animationPlayer2 = NodePath("RichTextLabel5/AnimationPlayer")
+animationPlayer3 = NodePath("RichTextLabel4/AnimationPlayer")
+animationPlayer4 = NodePath("")
+animationPlayer5 = NodePath("RichTextLabel2/AnimationPlayer")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1870.0
+offset_bottom = 1050.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Once upon a time there were three little piggies.
+
+The first pig built his house out of straw, the second out of sticks, and the third out of bricks."
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1870.0
+offset_bottom = 180.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Once upon a time there were three little piggies."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel6"]
+libraries = {
+&"": SubResource("AnimationLibrary_h2vi6")
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 170.0
+offset_right = 1870.0
+offset_bottom = 320.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Two of them were eaten by the Big Bad Wolf. But the third survived and got revenge for his brothers."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel5"]
+libraries = {
+&"": SubResource("AnimationLibrary_h2vi6")
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 375.0
+offset_right = 1870.0
+offset_bottom = 525.0
+theme_override_font_sizes/normal_font_size = 50
+text = "His brick house remained, a painful reminder of what the Wolf had taken. The pig lived on too. He was alone, but he wouldn't le the Wolf win."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel4"]
+libraries = {
+&"": SubResource("AnimationLibrary_h2vi6")
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 580.0
+offset_right = 800.0
+offset_bottom = 680.0
+theme_override_font_sizes/normal_font_size = 50
+text = "This little piggy had won."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel2"]
+libraries = {
+&"": SubResource("AnimationLibrary_h2vi6")
+}
