@@ -171,3 +171,4 @@ func die():
 		healthBar.get_parent().hide()
 	death.emit()
 	queue_free()
+	get_tree().change_scene_to_file("res://Scenes/outro_lore.tscn")
