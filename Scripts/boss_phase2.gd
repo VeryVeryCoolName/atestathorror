@@ -60,7 +60,7 @@ func _process(_delta):
 			state = "attack"
 	if state == "attack":
 		attackChoice = randf()
-		if attackChoice >= 0:
+		if attackChoice >= 0.0:
 			if attackChoice < 0.3:
 				rage()
 			else:
@@ -77,6 +77,7 @@ func _process(_delta):
 		animatedsprite.show()
 		motionlesssprite.hide()
 	else:
+		animatedsprite.stop()
 		animatedsprite.hide()
 		motionlesssprite.show()
 	if velocity.y < 0 and abs(velocity.x) < 150:
@@ -95,8 +96,8 @@ func _physics_process(delta):
 	pass
 
 func rage():
+	velocity = Vector2.ZERO
 	animate = true
-	animatedsprite.stop()
 	animatedsprite.play("rage")
 	isCooldownFinished = false
 	isRaging = true
