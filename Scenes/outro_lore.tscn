@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dod8mrqf6yrjw"]
 
-[ext_resource type="Script" uid="uid://bhjyarfw2tpc5" path="res://Scripts/Into_Cutscene_Text_Fade.gd" id="1_ol1mj"]
+[ext_resource type="Script" uid="uid://bjj5i8mh13rvk" path="res://Scripts/outro.gd" id="1_ol1mj"]
 
 [sub_resource type="Animation" id="Animation_exhv1"]
 length = 0.001
