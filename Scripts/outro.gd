@@ -9,7 +9,7 @@ extends Node
 
 func _ready():
 	AudioManager.stop()
-	
+	AudioManager.play_stream(AudioManager.music_list["menu"])
 	if animationPlayer1:
 		animationPlayer1.play("fade_in1")
 	if animationPlayer2:

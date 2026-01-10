@@ -28,6 +28,14 @@ signal death
 @onready var bossPhase2 = get_parent().get_node("Phase2Character")
 
 func _ready():
+	set_process(false)
+	set_physics_process(false)
+	hide()
+	await get_tree().create_timer(60.0).timeout
+	show()
+	set_process(true)
+	set_physics_process(true)
+	AudioManager.play_stream(AudioManager.music_list["phase1"])
 	if healthBarPath:
 		healthBar = get_node(healthBarPath)
 		healthBar.get_parent().show()
