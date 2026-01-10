@@ -37,6 +37,7 @@ func set_health(value: int):
 		health_bar.value = health
 	if health == 0:
 		freeze = true
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _process(delta):
 	if freeze:
@@ -91,14 +92,14 @@ func attack():
 func _on_attack_area_body_entered(body):
 	#if body.is_in_group("phase2boss"):
 	if body.has_method("take_damage"):
-		body.take_damage(20)
+		body.take_damage(9)
 	if not is_attacking:
 		return  # as zice return 0 dar nu stiu daca e rau
 	
 
 func _on_boss_attack_hit():
 	if inAttack:
-		health -= 12  
+		health -= 10  
 
 func _on_boss_attack_collide():
 	inAttack = true

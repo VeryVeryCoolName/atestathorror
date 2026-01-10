@@ -126,8 +126,8 @@ texture = ExtResource("2_2xbm5")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1079.0
+offset_right = 1922.0
+offset_bottom = 1099.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 visible = false
