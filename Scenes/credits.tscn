@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qq53fo426hkf"]
+[gd_scene load_steps=3 format=3 uid="uid://qq53fo426hkf"]
 
 [ext_resource type="Script" uid="uid://d4k8cntlfcaj" path="res://Scripts/credits.gd" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://cqhsv1i7acf7o" path="res://Assets/Meniu/meniu_potential.jpg" id="2_gryuy"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -11,22 +12,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r18jl")
 
-[node name="MainMenu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 850.0
-offset_right = 2069.0
-offset_bottom = 1200.0
-scale = Vector2(0.4, 0.4)
-theme_override_font_sizes/font_size = 250
-text = "Main Menu"
+[node name="MeniuPotential" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_gryuy")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 1920.0
+offset_bottom = 702.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 14.0
-offset_top = 36.0
+offset_top = -1.0
 offset_right = 1916.0
-offset_bottom = 741.0
+offset_bottom = 704.0
 theme_override_font_sizes/normal_font_size = 39
 theme_override_font_sizes/bold_font_size = 30
 text = "Developed by
@@ -41,5 +42,15 @@ Built with Godot Engine
 
 Third-Party Assets
 Background Tileset: “Dawnlike” by DragonDePlatino & DawnBringer - used under CC-BY 4.0 License"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 850.0
+offset_right = 2069.0
+offset_bottom = 1200.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 250
+text = "Main Menu"
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

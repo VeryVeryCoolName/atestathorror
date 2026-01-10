@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dod8mrqf6yrjw"]
+[gd_scene load_steps=10 format=3 uid="uid://dod8mrqf6yrjw"]
 
 [ext_resource type="Script" uid="uid://bjj5i8mh13rvk" path="res://Scripts/outro.gd" id="1_ol1mj"]
+[ext_resource type="Texture2D" uid="uid://byhwmgd1kywy5" path="res://Assets/Meniu/outro_background.png" id="2_2xbm5"]
 
 [sub_resource type="Animation" id="Animation_exhv1"]
 length = 0.001
@@ -114,12 +115,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ol1mj")
-animationPlayer1 = NodePath("RichTextLabel6/AnimationPlayer")
-animationPlayer2 = NodePath("RichTextLabel5/AnimationPlayer")
-animationPlayer3 = NodePath("RichTextLabel4/AnimationPlayer")
-animationPlayer5 = NodePath("RichTextLabel2/AnimationPlayer")
+animationPlayer1 = NodePath("Panel/RichTextLabel6/AnimationPlayer")
+animationPlayer2 = NodePath("Panel/RichTextLabel5/AnimationPlayer")
+animationPlayer3 = NodePath("Panel/RichTextLabel4/AnimationPlayer")
+animationPlayer5 = NodePath("Panel/RichTextLabel2/AnimationPlayer")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="OutroBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_2xbm5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1079.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 visible = false
 layout_mode = 0
 offset_left = 50.0
@@ -131,7 +141,7 @@ text = "Once upon a time there were three little piggies.
 
 The first pig built his house out of straw, the second out of sticks, and the third out of bricks."
 
-[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
@@ -140,12 +150,12 @@ offset_bottom = 180.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Once upon a time there were three little piggies."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RichTextLabel6"]
 libraries = {
 &"": SubResource("AnimationLibrary_h2vi6")
 }
 
-[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 170.0
@@ -154,12 +164,12 @@ offset_bottom = 320.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Two of them were eaten by the Big Bad Wolf. But the third survived and got revenge for his brothers."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RichTextLabel5"]
 libraries = {
 &"": SubResource("AnimationLibrary_h2vi6")
 }
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 375.0
@@ -168,12 +178,12 @@ offset_bottom = 525.0
 theme_override_font_sizes/normal_font_size = 50
 text = "His brick house remained, a painful reminder of what the Wolf had taken. The pig lived on too. He was alone, but he was alive."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RichTextLabel4"]
 libraries = {
 &"": SubResource("AnimationLibrary_h2vi6")
 }
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 580.0
@@ -182,7 +192,7 @@ offset_bottom = 680.0
 theme_override_font_sizes/normal_font_size = 50
 text = "This little piggy had won."
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/RichTextLabel2"]
 libraries = {
 &"": SubResource("AnimationLibrary_h2vi6")
 }

@@ -4,8 +4,8 @@ var sfx_player: AudioStreamPlayer
 var current_stream: AudioStream = null
 var nopause_sfx_volume_db: float = 6.0
 var music_list = {
-	"game": preload("res://music/gamemusic.mp3"),
-	"menu": preload("res://music/music_before_boss.wav"),
+	"game": preload("res://music/music_before_boss.wav"),
+	"menu": preload("res://music/mainmeniu.mp3"),
 	"phase1": preload("res://music/phase_1_music.wav"),
 	"phase2": preload("res://music/phase_2_music.wav")
 }
