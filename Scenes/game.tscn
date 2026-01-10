@@ -2102,7 +2102,7 @@ sprite_frames = SubResource("SpriteFrames_cwurv")
 animation = &"idle"
 
 [node name="BossCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(-820, -337)
+position = Vector2(-992, -534)
 script = ExtResource("16_ewbju")
 healthBarPath = NodePath("../Camera2D/CanvasLayer/BossHpBar/BossHpBarTexture")
 
