@@ -22,16 +22,17 @@ var attackFrameCounter = 0
 signal attackHit
 signal attackCollide
 signal attackCollideExit
-
+const SPAWN_POSITION := Vector2(-995.0, -800.0)
 signal death
 
 @onready var bossPhase2 = get_parent().get_node("Phase2Character")
 
-func _ready():
+func _ready() -> void:
+	hide()
 	set_process(false)
 	set_physics_process(false)
-	hide()
-	await get_tree().create_timer(60.0).timeout
+	await get_tree().create_timer(59.9).timeout
+	global_position = SPAWN_POSITION
 	show()
 	set_process(true)
 	set_physics_process(true)
