@@ -122,8 +122,9 @@ func die():
 	print("Boss defeated!")
 	if healthBar:
 		healthBar.get_parent().hide()
-	AudioManager.play_sfx_nopause(AudioManager.sfx_list["howl"])
-	# asta e cu pauza - AudioManager.play_sfx(AudioManager.sfx_list["howl"])
+	# asta e fara pauza AudioManager.play_sfx_nopause(AudioManager.sfx_list["howl"])
+	AudioManager.play_sfx(AudioManager.sfx_list["howl"])
 	death.emit()
+	AudioManager.play_stream(AudioManager.music_list["phase2"])
 	bossPhase2.global_position = position
 	queue_free()

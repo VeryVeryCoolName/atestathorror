@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Atestat Horror"
+config/description="Atestat pentru clasa a XII-a despre cei trei purcelusi"
 run/main_scene="uid://de1h6rvt8wrl6"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bswtjsc8mdh2w"
 
 [autoload]
 
@@ -23,7 +24,7 @@ AudioManager="*res://Scripts/audio_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
+window/size/mode=3
 window/size/borderless=true
 
 [dotnet]
