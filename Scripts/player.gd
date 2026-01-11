@@ -105,7 +105,7 @@ func set_health(value: int) -> void:
 
 func _on_attack_area_body_entered(body: Node) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(9)
+		body.take_damage(7)
 
 func _on_boss_attack_hit() -> void:
 	if in_attack:

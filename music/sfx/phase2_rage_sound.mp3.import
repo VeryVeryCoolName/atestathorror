@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bbxs0sl45jrcc"
-path="res://.godot/imported/phase2_rage_sound.mp3-a32d96cf3e6d4a4ece42bc80f315b7f2.mp3str"
+path="res://.godot/imported/phase2_rage_sound.mp3-c4c9193023e58ea0ac1e03a0cf2a82e1.mp3str"
 
 [deps]
 
-source_file="res://music/sfx/phase2_rage_sound.mp3"
-dest_files=["res://.godot/imported/phase2_rage_sound.mp3-a32d96cf3e6d4a4ece42bc80f315b7f2.mp3str"]
+source_file="res://Music/sfx/phase2_rage_sound.mp3"
+dest_files=["res://.godot/imported/phase2_rage_sound.mp3-c4c9193023e58ea0ac1e03a0cf2a82e1.mp3str"]
 
 [params]
 

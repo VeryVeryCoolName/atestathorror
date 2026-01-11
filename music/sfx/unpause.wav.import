@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://epq1kab21r6w"
-path="res://.godot/imported/unpause.wav-34201cf980260107d2937036967ee0d9.sample"
+path="res://.godot/imported/unpause.wav-4821686cf6f8f73ca861845e937aa894.sample"
 
 [deps]
 
-source_file="res://music/sfx/unpause.wav"
-dest_files=["res://.godot/imported/unpause.wav-34201cf980260107d2937036967ee0d9.sample"]
+source_file="res://Music/sfx/unpause.wav"
+dest_files=["res://.godot/imported/unpause.wav-4821686cf6f8f73ca861845e937aa894.sample"]
 
 [params]
 

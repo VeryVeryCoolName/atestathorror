@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dwv2vq02fre45"
-path="res://.godot/imported/phase2_transition_sound.mp3-2023a4e6374181c6efc274b2a26affb1.mp3str"
+path="res://.godot/imported/phase2_transition_sound.mp3-8aa4eaa1c80d18f1d7dba26bebb75b32.mp3str"
 
 [deps]
 
-source_file="res://music/sfx/phase2_transition_sound.mp3"
-dest_files=["res://.godot/imported/phase2_transition_sound.mp3-2023a4e6374181c6efc274b2a26affb1.mp3str"]
+source_file="res://Music/sfx/phase2_transition_sound.mp3"
+dest_files=["res://.godot/imported/phase2_transition_sound.mp3-8aa4eaa1c80d18f1d7dba26bebb75b32.mp3str"]
 
 [params]
 

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://qq53fo426hkf"]
+[gd_scene load_steps=5 format=3 uid="uid://qq53fo426hkf"]
 
 [ext_resource type="Script" uid="uid://d4k8cntlfcaj" path="res://Scripts/credits.gd" id="1_r18jl"]
 [ext_resource type="Texture2D" uid="uid://cqhsv1i7acf7o" path="res://Assets/Meniu/meniu_potential.jpg" id="2_gryuy"]
+
+[sub_resource type="SystemFont" id="SystemFont_ccovl"]
+
+[sub_resource type="SystemFont" id="SystemFont_gryuy"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -18,39 +22,77 @@ texture = ExtResource("2_gryuy")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 37.0
+offset_left = 4.0
+offset_top = 3.0
 offset_right = 1920.0
-offset_bottom = 702.0
+offset_bottom = 958.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = -1.0
-offset_right = 1916.0
-offset_bottom = 704.0
-theme_override_font_sizes/normal_font_size = 39
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 1915.0
+offset_bottom = 955.0
+theme_override_fonts/normal_font = SubResource("SystemFont_ccovl")
+theme_override_font_sizes/normal_font_size = 37
 theme_override_font_sizes/bold_font_size = 30
 text = "Developed by
 Cîrciumărescu Theodor
-Matei Mecu
+Mecu Matei
 
 Roles
-Programming, Character Design, Music, and HUD Art - Cîrciumărescu Theodor & Matei Mecu
+Programming, Character Design, HUD Art and most sound effects  - Cîrciumărescu Theodor & Mecu Matei
 
 Engine
 Built with Godot Engine
 
 Third-Party Assets
-Background Tileset: “Dawnlike” by DragonDePlatino & DawnBringer - used under CC-BY 4.0 License"
+Background Tileset: “Dawnlike” by DragonDePlatino & DawnBringer - used under CC-BY 4.0 License
+
+Main menu artwork: “Pig in the Dark” by Sam Spratt © Sam Spratt — All rights reserved
+Used with attribution. Not covered by the MIT License.
+
+Intro and outro artwork
+Two images of unknown origin. Author(s) could not be identified after reasonable effort.
+Used with no claim of ownership.
+
+Main Menu Theme:
+Instrumental arrangement by Cîrciumărescu Theodor based on \"R U Ready for ze new world order\"
+Original composition © respective rights holder(s)
+
+In-game music
+“Dracula’s Chase Theme” from Dead by Daylight composed by Michel F. April
+© Behaviour Interactive Inc.
+
+Sound Effects
+\"Wolf Howl 2\" by DRAGON-STUDIO
+Royalty-free sound effect
+
+Some visual and audio assets are third-party or derivative works based on
+existing copyrighted material. Original compositions and artworks remain
+the property of their respective rights holders.
+
+The MIT License applies only to the original source code of this project.
+All third-party assets are excluded unless otherwise stated."
 
 [node name="MainMenu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 700.0
-offset_top = 850.0
-offset_right = 2069.0
-offset_bottom = 1200.0
+offset_left = 1460.0
+offset_top = 960.0
+offset_right = 2610.0
+offset_bottom = 1260.0
 scale = Vector2(0.4, 0.4)
-theme_override_font_sizes/font_size = 250
+theme_override_font_sizes/font_size = 200
 text = "Main Menu"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 963.0
+offset_right = 408.0
+offset_bottom = 1079.0
+theme_override_fonts/normal_font = SubResource("SystemFont_gryuy")
+theme_override_font_sizes/normal_font_size = 85
+theme_override_font_sizes/bold_font_size = 30
+text = "Release 2"
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

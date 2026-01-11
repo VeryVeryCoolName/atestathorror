@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c45c1i0kpo64v"
-path="res://.godot/imported/ambient_sound_before_fight.mp3-33bd045be99eed4f3ba464046d448235.mp3str"
+path="res://.godot/imported/ambient_sound_before_fight.mp3-b16f8cfa310e6bce52c6cc0e5000a006.mp3str"
 
 [deps]
 
-source_file="res://music/sfx/ambient_sound_before_fight.mp3"
-dest_files=["res://.godot/imported/ambient_sound_before_fight.mp3-33bd045be99eed4f3ba464046d448235.mp3str"]
+source_file="res://Music/sfx/ambient_sound_before_fight.mp3"
+dest_files=["res://.godot/imported/ambient_sound_before_fight.mp3-b16f8cfa310e6bce52c6cc0e5000a006.mp3str"]
 
 [params]
 

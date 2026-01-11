@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://jad7wa6qmxwd" path="res://Assets/Sprites/Player/Movement/piggy_pc_left3.png" id="7_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://dy1sy01axxep3" path="res://Assets/Sprites/Enemies/hp_boss_progress.png" id="7_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://c0ewaqrl7amcj" path="res://Assets/Sprites/Player/Movement/piggy_pc_right2.png" id="8_exi56"]
-[ext_resource type="Script" uid="uid://ddhth8rdyjt25" path="res://Scenes/failsafe.gd" id="8_v2cs8"]
+[ext_resource type="Script" uid="uid://ddhth8rdyjt25" path="res://Scripts/failsafe.gd" id="8_v2cs8"]
 [ext_resource type="Texture2D" uid="uid://b6m0brmvr7110" path="res://Assets/Sprites/Player/Movement/piggy_pc_right1.png" id="9_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://ckdbv44aheqsv" path="res://Assets/Sprites/Player/Movement/piggy_pc_right3.png" id="10_mg4q0"]
 [ext_resource type="Texture2D" uid="uid://emeuirvmu8uh" path="res://Assets/Sprites/Player/Movement/piggy_pc_up1.png" id="11_vm72l"]

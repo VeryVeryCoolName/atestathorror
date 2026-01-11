@@ -31,7 +31,7 @@ func _ready() -> void:
 	hide()
 	set_process(false)
 	set_physics_process(false)
-	await get_tree().create_timer(59.9).timeout
+	await get_tree().create_timer(24.9).timeout
 	global_position = SPAWN_POSITION
 	show()
 	set_process(true)
