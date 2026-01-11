@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qq53fo426hkf"]
+[gd_scene load_steps=4 format=3 uid="uid://qq53fo426hkf"]
 
 [ext_resource type="Script" uid="uid://d4k8cntlfcaj" path="res://Scripts/credits.gd" id="1_r18jl"]
 [ext_resource type="Texture2D" uid="uid://cqhsv1i7acf7o" path="res://Assets/Meniu/meniu_potential.jpg" id="2_gryuy"]
-
-[sub_resource type="SystemFont" id="SystemFont_ccovl"]
-
-[sub_resource type="SystemFont" id="SystemFont_gryuy"]
+[ext_resource type="FontFile" uid="uid://bbuapk88bos2i" path="res://Assets/Fonts/WowDino-G33vP.ttf" id="3_ccovl"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -33,7 +30,7 @@ offset_left = 6.0
 offset_top = 2.0
 offset_right = 1915.0
 offset_bottom = 955.0
-theme_override_fonts/normal_font = SubResource("SystemFont_ccovl")
+theme_override_fonts/normal_font = ExtResource("3_ccovl")
 theme_override_font_sizes/normal_font_size = 37
 theme_override_font_sizes/bold_font_size = 30
 text = "Developed by
@@ -49,23 +46,28 @@ Built with Godot Engine
 Third-Party Assets
 Background Tileset: “Dawnlike” by DragonDePlatino & DawnBringer - used under CC-BY 4.0 License
 
-Main menu artwork: “Pig in the Dark” by Sam Spratt © Sam Spratt — All rights reserved
-Used with attribution. Not covered by the MIT License.
+Fonts 
+Death screen font by Billy Argel Fonts  © (Free for personal use only)
+General font by GraphicSauce © (Free for personal use only)
 
-Intro and outro artwork
+Main menu artwork: “Pig in the Dark” by Sam Spratt © Sam Spratt 
+
+Intro and outro artwork:
 Two images of unknown origin. Author(s) could not be identified after reasonable effort.
 Used with no claim of ownership.
+
+Death screen artwork: \"Voices.\" by WolfRoad 
+Artwork © WolfRoad, Character © Milku Minami
 
 Main Menu Theme:
 Instrumental arrangement by Cîrciumărescu Theodor based on \"R U Ready for ze new world order\"
 Original composition © respective rights holder(s)
 
-In-game music
+In-game music:
 “Dracula’s Chase Theme” from Dead by Daylight composed by Michel F. April
 © Behaviour Interactive Inc.
 
-Sound Effects
-\"Wolf Howl 2\" by DRAGON-STUDIO
+Phase 2 Sound Effect: \"Wolf Howl 2\" by DRAGON-STUDIO
 Royalty-free sound effect
 
 Some visual and audio assets are third-party or derivative works based on
@@ -82,6 +84,7 @@ offset_top = 960.0
 offset_right = 2610.0
 offset_bottom = 1260.0
 scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("3_ccovl")
 theme_override_font_sizes/font_size = 200
 text = "Main Menu"
 
@@ -90,9 +93,9 @@ layout_mode = 0
 offset_top = 963.0
 offset_right = 408.0
 offset_bottom = 1079.0
-theme_override_fonts/normal_font = SubResource("SystemFont_gryuy")
+theme_override_fonts/normal_font = ExtResource("3_ccovl")
 theme_override_font_sizes/normal_font_size = 85
 theme_override_font_sizes/bold_font_size = 30
-text = "Release 2"
+text = "Release 3"
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

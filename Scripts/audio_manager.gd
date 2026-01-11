@@ -10,6 +10,7 @@ var music_list = {
 	"phase2": preload("res://Music/phase_2_music.wav")
 }
 var sfx_list = { 
+	"jingle": preload("res://Music/sfx/jingle.mp3"),
 	"pause": preload("res://Music/sfx/pause.wav"),
 	"unpause": preload("res://Music/sfx/unpause.wav"),
 	"howl": preload("res://Music/sfx/ambient_sound_before_fight.mp3"),

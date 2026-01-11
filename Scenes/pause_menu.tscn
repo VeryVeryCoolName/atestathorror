@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx4oifoj2nshr"]
+[gd_scene load_steps=6 format=3 uid="uid://cx4oifoj2nshr"]
 
 [ext_resource type="Shader" uid="uid://cn1hsodfoslyl" path="res://Shaders/pause_menu.gdshader" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://hu2bm5u8hpmg" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="FontFile" uid="uid://bbuapk88bos2i" path="res://Assets/Fonts/WowDino-G33vP.ttf" id="3_1och7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2c35"]
 shader = ExtResource("1_emv3i")
@@ -41,6 +42,7 @@ offset_left = 650.0
 offset_top = 400.0
 offset_right = 1250.0
 offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("3_1och7")
 theme_override_font_sizes/font_size = 80
 text = "Resume"
 
@@ -51,6 +53,7 @@ offset_left = 650.0
 offset_top = 530.0
 offset_right = 1250.0
 offset_bottom = 648.0
+theme_override_fonts/font = ExtResource("3_1och7")
 theme_override_font_sizes/font_size = 80
 text = "Quit"
 
@@ -63,6 +66,7 @@ offset_left = 410.0
 offset_top = 222.0
 offset_right = 1500.0
 offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("3_1och7")
 text = "The game is now paused!"
 label_settings = SubResource("LabelSettings_k0w1u")
 

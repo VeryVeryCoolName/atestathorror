@@ -101,7 +101,7 @@ func set_health(value: int) -> void:
 
 	if health <= 0:
 		freeze = true
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/death.tscn")
 
 func _on_attack_area_body_entered(body: Node) -> void:
 	if body.has_method("take_damage"):

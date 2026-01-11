@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccyre08e10by4"]
+[gd_scene load_steps=4 format=3 uid="uid://ccyre08e10by4"]
 
 [ext_resource type="Script" uid="uid://76gaj3ej202x" path="res://Scripts/settings.gd" id="1_4geyq"]
 [ext_resource type="Texture2D" uid="uid://cqhsv1i7acf7o" path="res://Assets/Meniu/meniu_potential.jpg" id="2_i44u3"]
+[ext_resource type="FontFile" uid="uid://bbuapk88bos2i" path="res://Assets/Fonts/WowDino-G33vP.ttf" id="3_lhmql"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -22,6 +23,7 @@ offset_left = 250.0
 offset_top = 600.0
 offset_right = 1619.0
 offset_bottom = 950.0
+theme_override_fonts/font = ExtResource("3_lhmql")
 theme_override_font_sizes/font_size = 250
 text = "Main Menu"
 
