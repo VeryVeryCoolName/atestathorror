@@ -4,20 +4,20 @@ var sfx_player: AudioStreamPlayer
 var current_stream: AudioStream = null
 var nopause_sfx_volume_db: float = 6.0
 var music_list = {
-	"game": preload("res://music/music_before_boss.wav"),
-	"menu": preload("res://music/mainmeniu.mp3"),
-	"phase1": preload("res://music/phase_1_music.wav"),
-	"phase2": preload("res://music/phase_2_music.wav")
+	"game": preload("res://Music/music_before_boss.wav"),
+	"menu": preload("res://Music/mainmeniu.mp3"),
+	"phase1": preload("res://Music/phase_1_music.wav"),
+	"phase2": preload("res://Music/phase_2_music.wav")
 }
 var sfx_list = { 
-	"pause": preload("res://music/sfx/pause.wav"),
-	"unpause": preload("res://music/sfx/unpause.wav"),
-	"howl": preload("res://music/sfx/ambient_sound_before_fight.mp3"),
-	"attack_hit": preload("res://music/sfx/attack_hit_sound.mp3"),
-	"attack_boss": preload("res://music/sfx/boss_attack_sound.mp3"),
-	"attack_player": preload("res://music/sfx/player_attack_sound.mp3"),
-	"phase2_rage": preload("res://music/sfx/phase2_rage_sound.mp3"),
-	"phase2_transition": preload("res://music/sfx/phase2_transition_sound.mp3")
+	"pause": preload("res://Music/sfx/pause.wav"),
+	"unpause": preload("res://Music/sfx/unpause.wav"),
+	"howl": preload("res://Music/sfx/ambient_sound_before_fight.mp3"),
+	"attack_hit": preload("res://Music/sfx/attack_hit_sound.mp3"),
+	"attack_boss": preload("res://Music/sfx/boss_attack_sound.mp3"),
+	"attack_player": preload("res://Music/sfx/player_attack_sound.mp3"),
+	"phase2_rage": preload("res://Music/sfx/phase2_rage_sound.mp3"),
+	"phase2_transition": preload("res://Music/sfx/phase2_transition_sound.mp3")
 }
 
 func _ready():
