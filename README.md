@@ -70,8 +70,8 @@ de completat
 | boss_phase1 |  |
 | boss_phase2 |  |
 | cameracontroller | Din motivul acestui script singura rezoluție care merge este cea de 1920x1080, merită o categorie separată. Acest script controlează camera jocului și împarte nivelul în zone fixe. Camera rămâne centrată pe o zonă și se mută automat către următoarea zonă atunci când jucătorul o traversează. La începutul jocului, camera se poziționează în zona în care se află jucătorul și devine camera activă. Pe parcursul jocului, poziția jucătorului este verificată constant, iar la schimbarea zonei este declanșată o tranziție lină a camerei. În timpul tranziției, mișcarea jucătorului este temporar blocată pentru a asigura o experiență vizuală corectă. După finalizarea tranziției, jocul continuă normal. Am fost inspirat de către jocurile "old school" (în special The Legend of Zelda pentru NES), care foloseau dimensiuni fixe. Din păcate, nu am reușit să găsesc o formulă ce permite această tranziție să fie compatibilă cu fiecare rezoluție posibilă|
-| credits | Este conectat la un singur butoan ce duce jucătorul în meniu |
-| deathscreen | Este conectat la un singur butoan ce duce jucătorul în meniu|
+| credits | Este conectat la un singur buton ce duce jucătorul în meniu |
+| deathscreen | Este conectat la un singur buton ce duce jucătorul în meniu|
 | failsafe | Poate fi integrat in boss_phase_1, ascunde bara de hp a lupului pentru un timp predeterminat|
 | healthbar |  |
 | Intro_Cutscene_Text_Fade |  |
