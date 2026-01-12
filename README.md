@@ -8,14 +8,19 @@ Acest proiect a fost făcut folosing 2 unelte principale
 
 ```text
 atestathorror/
-├─ Assets/        - conține poze și texturi pentru joc
+├─ Assets/
+│  ├─ Fonts/        - fonturi utilizate în joc
+│  ├─ Meniu/        - resurse grafice pentru meniul jocului
+│  ├─ Sprites/      - sprite-uri și texturi (ex: personaje, boss, HP bar)
+│  └─ Tilemaps/     - tilemap-uri utilizate pentru construirea nivelurilor
 ├─ Music/
-│  └─ sfx/        - conține muzica și efectele sonore
-├─ Prefabs/       - conține atacurile inamicului
-├─ Scenes/        - conține scenele jocului (meniuri, niveluri, personaje)
-├─ Scripts/       - conține scripturile care controlează logica jocului
-├─ Shaders/       - conține shadere pentru meniul de pauză
-└─ project.godot  - fișierul principal de configurare al proiectului
+│  └─ sfx/          - muzică și efecte sonore
+├─ Prefabs/         - elemente prefabricate (ex: atacurile inamicului)
+├─ Scenes/          - scenele jocului (meniuri, niveluri, personaje)
+├─ Scripts/         - scripturi GDScript care controlează logica jocului
+├─ Shaders/         - shadere utilizate (ex: pentru meniul de pauză)
+└─ project.godot    - fișierul principal de configurare al proiectului
+
 ```
 
 ## Rularea proiectului din sursă
