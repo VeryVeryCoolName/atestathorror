@@ -61,6 +61,7 @@ text = "Quit"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 46
 text = "1920 x 1080 REQUIRED"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

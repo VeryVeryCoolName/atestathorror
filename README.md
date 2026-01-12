@@ -56,6 +56,8 @@ Apoi, în godot, selectați opțiunea de "import existing project":
 
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/import.png?raw=true">
 
+Jocul este compatibil doar cu rezolutia de 1920x1080, dar poate fi vizualizat cu orice rezolutie.
+
 ## Motivul alegerii temei
 de completat
 
@@ -69,7 +71,7 @@ de completat
 | audiomanager | Acest script gestionează sunetele și muzica din joc, având rolul de manager audio global. El controlează atât muzica de fundal, cât și efectele sonore. La inițializare, sunt încărcate toate fișierele audio necesare jocului, grupate în liste separate pentru muzică și efecte sonore. Acest lucru permite accesarea rapidă a sunetelor în funcție de contextul jocului. Muzica de fundal poate fi pornită, oprită sau verificată dacă este activă. În anumite situații, muzica este întreruptă temporar pentru a reda un efect sonor important, după care este reluată din același punct. De asemenea, scriptul permite redarea efectelor sonore fără a întrerupe muzica, ajustând temporar volumul acestora pentru a evidenția anumite momente din joc. |
 | boss_phase1 |  |
 | boss_phase2 |  |
-| cameracontroller | Din motivul acestui script singura rezoluție care merge este cea de 1920x1080, merită o categorie separată. Acest script controlează camera jocului și împarte nivelul în zone fixe. Camera rămâne centrată pe o zonă și se mută automat către următoarea zonă atunci când jucătorul o traversează. La începutul jocului, camera se poziționează în zona în care se află jucătorul și devine camera activă. Pe parcursul jocului, poziția jucătorului este verificată constant, iar la schimbarea zonei este declanșată o tranziție lină a camerei. În timpul tranziției, mișcarea jucătorului este temporar blocată pentru a asigura o experiență vizuală corectă. După finalizarea tranziției, jocul continuă normal. Am fost inspirat de către jocurile "old school" (în special The Legend of Zelda pentru NES), care foloseau dimensiuni fixe. Din păcate, nu am reușit să găsesc o formulă ce permite această tranziție să fie compatibilă cu fiecare rezoluție posibilă|
+| cameracontroller | Acest script merge doar la rezolutia de 1920x1080, merită o categorie separată. Acest script controlează camera jocului și împarte nivelul în zone fixe. Camera rămâne centrată pe o zonă și se mută automat către următoarea zonă atunci când jucătorul o traversează. La începutul jocului, camera se poziționează în zona în care se află jucătorul și devine camera activă. Pe parcursul jocului, poziția jucătorului este verificată constant, iar la schimbarea zonei este declanșată o tranziție lină a camerei. În timpul tranziției, mișcarea jucătorului este temporar blocată pentru a asigura o experiență vizuală corectă. După finalizarea tranziției, jocul continuă normal. Am fost inspirat de către jocurile "old school" (în special The Legend of Zelda pentru NES), care foloseau dimensiuni fixe. Din păcate, nu am reușit să găsesc o formulă ce permite această tranziție să fie compatibilă cu fiecare rezoluție posibilă|
 | credits | Este conectat la un singur buton ce duce jucătorul în meniu |
 | deathscreen | Este conectat la un singur buton ce duce jucătorul în meniu|
 | failsafe | Poate fi integrat in boss_phase_1, ascunde bara de hp a lupului pentru un timp predeterminat|
