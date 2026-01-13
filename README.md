@@ -1,9 +1,27 @@
 # Documentația atestatului
-Acest proiect a fost făcut folosind 2 unelte principale
-- [Godot Engine (pentru a programa jocul)](https://godotengine.org/)
-- [Github (pentru a organiza jocul)](https://github.com/)
 
-## Structura proiectului
+# Motivul alegerii temei
+De mult timp ne-am dorit să creeăm un joc top-down rogue-like, fiind pasionați de acest tip de jocuri. Printre inspirațiile noastre principale se numără The Legend of Zelda (Nintendo, 1986) și The Binding of Isaac (Edmund McMillen, 2011). De asemenea, suntem fani ai unor jocuri moderne precum Cruelty Squad (Ville Kallio, 2021), creeat în engine-ul Godot, ceea ce ne-a motivat să alegem acest program pentru jocul nostru. Tema fabulei celor trei purceluși ne-a interesat, deoarece, de-a lungul timpului, ne-au captivat adaptările noi ale poveștilor clasice, precum seria de benzi desenate Fables (DC Comics, 2002). Ne-am dorit ca jocul să aibă o atmosferă familiară, însă totodată nouă, misterioasă, invitând jucătorul să se cufunde în povestea jocului. De asemenea, această temă ne-a oferit posibilitatea de a introduce elemente comice în joc, folosindu-ne de contrastul dintre seriozitatea poveștii acestuia și statutul sursei de inspirație ca poveste pentru copii.
+
+# Programele utilizate
+## Godot
+Godot este un game engine open-source, prin care se pot crea jocuri video 2D și 3D. Programul se aseamănă cu alte game engine-uri similare, precum Unity, însă se diferențiază de acestea, fiind gândit cu scopul de a face procesul de dezvoltare a jocurilor mai simplu și accesibil, fără a pierde din funcționalitate. Jocurile pot fi programate în limbajele C++ și C#, dar noi am ales să utilizăm limbajul propriu al engine-ului, GDScript. Godot este disponibil gratuit pe [site-ul oficial](https://godotengine.org/), dar poate fi obținut și din magazinul online Steam sau din [repository-ul github](https://github.com/godotengine/godot).
+
+Un proiect Godot este împărțit în mai multe scene, iar engine-ul facilitează utilizatorilor o interfață intuitivă prin care aceștia pot avea acces la elementele constituente ale acestora, nodurile, care sunt grupate în ierarhii.
+
+Exemplu (structura unei scene):
+de pus imagine cu un scene tree
+
+Nodurilor le pot fi adăugate alte noduri fii de diverse tipuri, conferindu-le anumite proprietăți în funcție de nevoile utilizatorului. Spre exemplu, un nod te tip Sprite2D ofera posibilitatea de a adăuga o textură vizibilă nodului său părinte:
+de pus imagine cu un Sprite2D
+
+## Limbajul GDScript
+de completat
+
+## Photoshop
+de completat
+
+# Structura proiectului
 
 ```text
 atestathorror/
@@ -44,7 +62,7 @@ main_menu.tscn
  └─ Quit → ieșire
  ``` 
 ## Rularea proiectului din sursă
-Pentru a insala jocul, prima dată trebuie instalat folderul cu proiectul, folosind [git](https://git-scm.com/install/):
+Pentru a importa jocul în Godot, prima dată trebuie instalat folderul cu proiectul, folosind [git](https://git-scm.com/install/):
 ```sh
 git clone https://github.com/VeryVeryCoolName/atestathorror.git
 ```
@@ -52,24 +70,13 @@ sau instalând manual zip-ul:
 
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/repository.png?raw=true">
 
-Apoi, în godot, selectați opțiunea de "import existing project":
+Apoi, în Godot, selectați opțiunea de "import existing project":
 
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/import.png?raw=true">
 
 Jocul este compatibil doar cu rezolutia de 1920x1080, dar poate fi vizualizat cu orice rezolutie.
 
-## Motivul alegerii temei
-De mult timp ne-am dorit să creeăm un joc top-down rogue-like, fiind pasionați de acest tip de jocuri. Printre inspirațiile noastre principale se numără The Legend of Zelda (Nintendo, 1986) și The Binding of Isaac (Edmund McMillen, 2011). De asemenea, suntem fani ai unor jocuri moderne precum Cruelty Squad (Ville Kallio, 2021), creeat în engine-ul Godot, ceea ce ne-a motivat să alegem acest program pentru jocul nostru. Tema fabulei celor trei purceluși ne-a interesat, deoarece, de-a lungul timpului, ne-au captivat adaptările noi ale poveștilor clasice, precum seria de benzi desenate Fables (DC Comics, 2002). Ne-am dorit ca jocul să aibă o atmosferă familiară, însă totodată nouă, misterioasă, invitând jucătorul să se cufunde în povestea jocului. De asemenea, această temă ne-a oferit posibilitatea de a introduce elemente comice în joc, folosindu-ne de contrastul dintre seriozitatea poveștii acestuia și statutul sursei de inspirație ca poveste pentru copii.
-
-## Programele utilizate
-Godot
-Photoshop
-de completat
-
-## Limbajul gdscript
-de completat
-
-## Scripturile (ordonate alfabetic)
+# Scripturile (ordonate alfabetic)
 
 | Script | Descriere |
 | ------ | ------ |
