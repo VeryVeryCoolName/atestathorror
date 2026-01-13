@@ -20,10 +20,11 @@ de completat
 
 ## Photoshop
 Photoshop este un program de editare a imaginilor și face parte din suita Adobe. L-am utilizat în cadrul acestui proiect pentru a realiza majoritatea sprite-urilor și animațiilor prezente în joc. Pentru a crea un sprite, am început prin a stabili rezoluția necesară. Pentru acest joc am ales să folosim sprite-uri de 16x16 pixeli, dar și unele de rezoluție mai mare, până la 32x32 pixeli.
-de pus imagine cu new project window din photoshop
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Photoshop_Project.png?raw=true">
 
 După ce am creat proiectul cu rezoluția dorită, am folosit uneltele de selecție și de pensulă pentru a desena sprite-urile, salvându-le pe fiecare ca un fișier .png separat.
-de pus imagini cu photoshop toolbarul și cu folderul de pnguri
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Photoshop_Tools.png?raw=true">
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Sprites_Example.png?raw=true">
 
 Astfel, le-am putut importa în Godot și integra în joc.
 
