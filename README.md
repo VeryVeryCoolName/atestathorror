@@ -101,13 +101,13 @@ Jocul este compatibil doar cu rezolutia de 1920x1080, dar poate fi vizualizat cu
 | [credits](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/credits.gd) | Este conectat la un singur buton ce duce jucătorul în meniu |
 | [deathscreen](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/deathscreen.gd) | Este conectat la un singur buton ce duce jucătorul în meniu|
 | [failsafe](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/failsafe.gd) | Poate fi integrat in boss_phase_1, ascunde bara de hp a lupului pentru un timp predeterminat|
-| [healthbar](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/healthbar.gd) |  |
-| [Intro_Cutscene_Text_Fade](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/Intro_Cutscene_Text_Fade.gd) |  |
+| [healthbar](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/healthbar.gd) | Actualizează în timp real textura barei de viață a jucătorului. |
+| [Intro_Cutscene_Text_Fade](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/Intro_Cutscene_Text_Fade.gd) | Face textul din intro să apară în mod dinamic. |
 | [main_menu](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/main_menu.gd) | Inițializează audiomanagerul și este conectat la 4 butoane; scena se schimbă în funcție de ce buton este apăsat |
-| [outro](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/outro.gd) |  |
+| [outro](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/outro.gd) | Se aseamănă cu [Intro_Cutscene_Text_Fade](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/Intro_Cutscene_Text_Fade.gd), dar funcționează în timpul outro-ului. |
 | [pause_menu](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/pause_menu.gd) |Atunci când jucătorul apasă pe escape, apare un meniu de pauză peste joc și blochează tot din scenă. Acest meniu este mereu încărcat în joc și apare înainte de pauză, iar apoi dispare când cheia este apasată iar sau jucătorul apasă pe butonul de unpause|
-| [player](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/player.gd) | |
-| [playeranimations](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/playeranimations.gd) | |
+| [player](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/player.gd) | Gestionează acțiunile jucătorului, de la miscări până la atacuri. Mișcările jucatorului sunt normalizate, pentru a preveni un comportament nedorit al acestui script în timpul mișcărilor pe diagonală. Jucătorul poate ataca doar în direcția în care s-a mișcat ultima dată, moment în care scriptul creează o cutie ce reprezintă raza de acțiune a atacului și verifică dacă acesta s-a intersectat cu inamicul. |
+| [playeranimations](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/playeranimations.gd) | Gestioneaza animațiile personajului jucătorului în funcție de direcția de mișcare. |
 | [settings](https://github.com/VeryVeryCoolName/atestathorror/blob/main/Scripts/settings.gd) | Momentan are un slider ce editează volumul jocului (în decibeli) și ține minte valoarea, are și o funție pentru a trimite jucătorul înapoi în meniul principal|
 
 ## Bibliografie
