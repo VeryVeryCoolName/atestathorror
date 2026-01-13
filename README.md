@@ -20,7 +20,7 @@ Nodurilor le pot fi adăugate alte noduri fii de diverse tipuri, conferindu-le a
 Îmbinând mai multe scene și folosind scripturi scrise în unul din limbajele de programare suportate, utilizatorii pot să își creeze propriile jocuri. Godot oferă destulă libertate în ceea ce privește funcționalitatea jocurilor, astfel încât posibilitățile sunt nelimitate.
 
 ## Limbajul GDScript
-de completat
+GDScript este un limbaj de programare asemănător cu Python, gândit special pentru Godot. La fel ca Python, acesta folosește indentarea pentru organizarea codului în loc de paranteze. Are o mulțime de librării cu funcții specifice pentru programarea jocurilor. Există, de exemplu, funcții ce rulează odată cu încărcarea scenei, cu fiecare cadru încărcat, sau la un interval predeterminat. De asemenea, inițializarea variabilelor se face în mod automat, interpretorul recunoscând tipul variabilei în momentul atribuirii unei valori acesteia. Spre deosebire de Python, clasele reprezintă o parte mare a limbajului GDScript, fiind astfel integrată structura ierarhică de scene și noduri până la nivel de cod.
 
 ## Photoshop
 Photoshop este un program de editare a imaginilor și face parte din suita Adobe. L-am utilizat în cadrul acestui proiect pentru a realiza majoritatea sprite-urilor și animațiilor prezente în joc. Pentru a crea un sprite, am început prin a stabili rezoluția necesară. Pentru acest joc am ales să folosim sprite-uri de 16x16 pixeli, dar și unele de rezoluție mai mare, până la 32x32 pixeli.
