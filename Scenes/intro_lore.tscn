@@ -235,12 +235,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_h2vi6")
 }
 
+[node name="RichTextLabel7" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 1087.0
+offset_top = 768.0
+offset_right = 1924.0
+offset_bottom = 1027.0
+theme_override_colors/default_color = Color(0.757, 1.054, 1.269, 1)
+theme_override_fonts/normal_font = ExtResource("3_h2vi6")
+theme_override_font_sizes/normal_font_size = 50
+text = "Controls
+WASD /  	ARROW KEYS  - movement
+ESCAPE - pause
+z / click - attack"
+
 [node name="Skip" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1580.0
-offset_top = 896.0
-offset_right = 1880.0
-offset_bottom = 987.0
+offset_left = 1480.0
+offset_top = 900.0
+offset_right = 1780.0
+offset_bottom = 991.0
 theme_override_colors/font_color = Color(0.757, 1.054, 1.269, 1)
 theme_override_fonts/font = ExtResource("3_h2vi6")
 theme_override_font_sizes/font_size = 60
