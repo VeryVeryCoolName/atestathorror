@@ -59,6 +59,11 @@ Apoi, în godot, selectați opțiunea de "import existing project":
 Jocul este compatibil doar cu rezolutia de 1920x1080, dar poate fi vizualizat cu orice rezolutie.
 
 ## Motivul alegerii temei
+De mult timp ne-am dorit să creeăm un joc top-down rogue-like, fiind pasionați de acest tip de jocuri. Printre inspirațiile noastre principale se numără The Legend of Zelda (Nintendo, 1986) și The Binding of Isaac (Edmund McMillen, 2011). De asemenea, suntem fani ai unor jocuri moderne precum Cruelty Squad (Ville Kallio, 2021), creeat în engine-ul Godot, ceea ce ne-a motivat să alegem acest program pentru jocul nostru. Tema fabulei celor trei purceluși ne-a interesat, deoarece, de-a lungul timpului, ne-au captivat adaptările noi ale poveștilor clasice, precum seria de benzi desenate Fables (DC Comics, 2002). Ne-am dorit ca jocul să aibă o atmosferă familiară, însă totodată nouă, misterioasă, invitând jucătorul să se cufunde în povestea jocului. De asemenea, această temă ne-a oferit posibilitatea de a introduce elemente comice în joc, folosindu-ne de contrastul dintre seriozitatea poveștii acestuia și statutul sursei de inspirație ca poveste pentru copii.
+
+## Programele utilizate
+Godot
+Photoshop
 de completat
 
 ## Limbajul gdscript
