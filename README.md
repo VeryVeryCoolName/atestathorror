@@ -24,7 +24,7 @@ GDScript este un limbaj de programare asemănător cu Python, gândit special pe
 
 Exemplu de secvență de cod GDScript:
 
-<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/gscript-code.png?raw=true">
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/gdscript-code.png?raw=true">
 
 ## Photoshop
 Photoshop este un program de editare a imaginilor și face parte din suita Adobe. L-am utilizat în cadrul acestui proiect pentru a realiza majoritatea sprite-urilor și animațiilor prezente în joc. Pentru a crea un sprite, am început prin a stabili rezoluția necesară. Pentru acest joc am ales să folosim sprite-uri de 16x16 pixeli, dar și unele de rezoluție mai mare, până la 32x32 pixeli.
