@@ -10,19 +10,23 @@ Godot este un game engine open-source, prin care se pot crea jocuri video 2D și
 Un proiect Godot este împărțit în mai multe scene, iar engine-ul facilitează utilizatorilor o interfață intuitivă prin care aceștia pot avea acces la elementele constituente ale acestora, nodurile, care sunt grupate în ierarhii.
 
 Exemplu (structura unei scene):
-de pus imagine cu un scene tree
+
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Godot_Scene.png?raw=true">
 
 Nodurilor le pot fi adăugate alte noduri fii de diverse tipuri, conferindu-le anumite proprietăți în funcție de nevoile utilizatorului. Spre exemplu, un nod te tip Sprite2D ofera posibilitatea de a adăuga o textură vizibilă nodului său părinte:
-de pus imagine cu un Sprite2D
+
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Godot_Sprites.png?raw=true">
 
 ## Limbajul GDScript
 de completat
 
 ## Photoshop
 Photoshop este un program de editare a imaginilor și face parte din suita Adobe. L-am utilizat în cadrul acestui proiect pentru a realiza majoritatea sprite-urilor și animațiilor prezente în joc. Pentru a crea un sprite, am început prin a stabili rezoluția necesară. Pentru acest joc am ales să folosim sprite-uri de 16x16 pixeli, dar și unele de rezoluție mai mare, până la 32x32 pixeli.
+
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Photoshop_Project.png?raw=true">
 
 După ce am creat proiectul cu rezoluția dorită, am folosit uneltele de selecție și de pensulă pentru a desena sprite-urile, salvându-le pe fiecare ca un fișier .png separat.
+
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Photoshop_Tools.png?raw=true">
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Sprites_Example.png?raw=true">
 
