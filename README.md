@@ -42,7 +42,7 @@ Astfel, le-am putut importa în Godot și integra în joc.
 ## Github desktop
 [Github desktop](https://desktop.github.com/download/) este o versiune mai "user-friendly" a programului git. L-am folosit pentru controlul versiunilor, adică pentru urmărirea modificărilor aduse codului sursă în timp real. Cu ajutorul acestui program, am putut lucra la aspecte diferite ale proiectului fără să trebuiască să ne trimitem modificările manual. Aplicația permite salvarea modificărilor importante (commit-uri), revenirea la versiuni anterioare și sincronizarea codului cu un depozit online (repository) pe platforma Github.  
 
-<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Photoshop_Tools.png?raw=true">
+<img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/exemplu_schimbare.png?raw=true">
 
 Cel mai mare avantaj al utilizării acestui program este posibilitatea de a lucra organizat și sigur, deoarece toate modificările sunt înregistrate atât local, cât și online.
 
