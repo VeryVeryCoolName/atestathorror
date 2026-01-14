@@ -13,7 +13,7 @@ Exemplu (structura unei scene):
 
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Godot_Scene.png?raw=true">
 
-Nodurilor le pot fi adăugate alte noduri fii de diverse tipuri, conferindu-le anumite proprietăți în funcție de nevoile utilizatorului. Spre exemplu, un nod te tip Sprite2D ofera posibilitatea de a adăuga o textură vizibilă nodului său părinte:
+Nodurilor le pot fi adăugate alte noduri fii de diverse tipuri, conferindu-le anumite proprietăți în funcție de nevoile utilizatorului. Spre exemplu, un nod de tip Sprite2D ofera posibilitatea de a adăuga o textură vizibilă nodului său părinte:
 
 <img src="https://github.com/VeryVeryCoolName/atestathorror/blob/main/Imagini_Documentatie/Godot_Sprites.png?raw=true">
 
