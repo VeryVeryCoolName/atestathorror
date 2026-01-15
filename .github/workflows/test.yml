@@ -33,30 +33,27 @@ jobs:
         mv * ..
         cd ..
         rm -rf templates
-        ls
 
     - name: Create build directory
       run: mkdir -p build
 
     - name: Export iOS project
-      run: godot --headless --export-release "iOS" build/atestathorror.xcodeproj
-        
+      run: godot --headless --path . --export-release "iOS_build" build/atestathorror.xcodeproj
+
     - name: Set iOS Deployment Target
-      run: sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/IPHONEOS_DEPLOYMENT_TARGET = 14.0;/' build/atestathorror.xcodeproj/project.pbxproj
+      run: sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = .*/IPHONEOS_DEPLOYMENT_TARGET = 14.0;/g' build/atestathorror.xcodeproj/project.pbxproj
 
     - name: Build iOS project
-      run: xcodebuild -project build/atestathorror.xcodeproj -scheme atestathorror -configuration Release -archivePath build/atestathorror.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      run: xcodebuild -project build/atestathorror.xcodeproj -scheme "Atestat Horror" -configuration Release -archivePath build/atestathorror.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
     - name: Export IPA
-      run: | 
-        cd build
-        cd atestathorror.xcarchive
-        cd Products
-        cd Applications
+      run: |
+        cd build/atestathorror.xcarchive/Products/Applications
         mkdir Payload
-        mv atestathorror.app Payload/
-        zip -r atestathorror.ipa Payload/
-        mv atestathorror.ipa ../../..
+        mv "Atestat Horror.app" Payload/
+        zip -r ../../../atestathorror.ipa Payload/
+        cd ../../../..
+
     - name: Upload IPA to GitHub Artifacts
       uses: actions/upload-artifact@v4
       with:
