@@ -46,13 +46,24 @@ theme_override_fonts/font = ExtResource("3_1och7")
 theme_override_font_sizes/font_size = 80
 text = "Resume"
 
+[node name="menu" type="Button" parent="MenuRoot"]
+modulate = Color(0.8039216, 0.6862745, 0.93333334, 1)
+layout_mode = 0
+offset_left = 650.0
+offset_top = 525.0
+offset_right = 1250.0
+offset_bottom = 643.0
+theme_override_fonts/font = ExtResource("3_1och7")
+theme_override_font_sizes/font_size = 80
+text = "Main Menu"
+
 [node name="quit" type="Button" parent="MenuRoot"]
 modulate = Color(0.8039216, 0.6862745, 0.93333334, 1)
 layout_mode = 0
 offset_left = 650.0
-offset_top = 530.0
+offset_top = 650.0
 offset_right = 1250.0
-offset_bottom = 648.0
+offset_bottom = 768.0
 theme_override_fonts/font = ExtResource("3_1och7")
 theme_override_font_sizes/font_size = 80
 text = "Quit"
@@ -71,4 +82,5 @@ text = "The game is now paused!"
 label_settings = SubResource("LabelSettings_k0w1u")
 
 [connection signal="pressed" from="MenuRoot/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuRoot/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MenuRoot/quit" to="." method="_on_quit_pressed"]
