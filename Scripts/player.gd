@@ -2,15 +2,15 @@ class_name PlayerCharacter
 extends CharacterBody2D
 @export var offset := 86
 @export var move_speed := 425.0
+@export var attack_cooldown := 0.45
 @export_node_path("TextureProgressBar") var health_bar_path
 const MAX_HEALTH := 100
+var attack_cooldown_timer := 0.0
 var health := MAX_HEALTH : set = set_health
 var freeze := false
 var is_attacking := false
 var in_attack := false
-
 var cardinal_direction := Vector2.DOWN
-
 @onready var attack_area: Area2D = $AttackArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weapon_sprite: AnimatedSprite2D = $AttackArea/AnimatedSprite2D
@@ -47,9 +47,14 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	if attack_cooldown_timer > 0.0:
+		attack_cooldown_timer -= delta
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Attack") and not is_attacking and not freeze:
+	if Input.is_action_just_pressed("Attack") \
+	and not is_attacking \
+	and not freeze \
+	and attack_cooldown_timer <= 0.0:
 		attack()
 
 func _handle_movement() -> void:
@@ -66,6 +71,7 @@ func _handle_movement() -> void:
 
 func attack() -> void:
 	is_attacking = true
+	attack_cooldown_timer = attack_cooldown
 	velocity = Vector2.ZERO
 
 	var original_position := attack_area.position
