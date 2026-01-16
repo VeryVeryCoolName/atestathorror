@@ -36,7 +36,7 @@ jobs:
       run: mkdir -p build
 
     - name: Export iOS Xcode project
-      run: godot --headless --path . --export-release "iOS_build" build/atestathorror.xcodeproj
+      run: godot --path . --export-release "iOS_build" build/atestathorror.xcodeproj
 
     - name: Build unsigned archive
       run: xcodebuild -project build/atestathorror.xcodeproj -scheme "Atestat Horror" -configuration Release -archivePath build/atestathorror.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
