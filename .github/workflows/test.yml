@@ -1,55 +1,53 @@
-name: Build iOS
+name: Build iOS IPA (Godot 4.5, unsigned)
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  ios:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Download Godot
-      run: |
-        wget https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_macos.universal.zip
-        unzip Godot_v4.5-stable_macos.universal.zip -d godot
-        sudo mv godot/Godot.app /Applications/Godot.app
-        sudo ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+      - name: Install Godot
+        run: |
+          brew install --cask godot
 
-    - name: Download Godot Export Templates
-      run: |
-        mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.5.stable
-        cd ~/Library/Application\ Support/Godot/export_templates/4.5.stable
-        wget https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_export_templates.tpz
-        unzip Godot_v4.5-stable_export_templates.tpz
-        mv templates/* .
-        rmdir templates
+      - name: Install export templates
+        run: |
+          VERSION=4.5
+          mkdir -p "$HOME/Library/Application Support/Godot/export_templates"
+          curl -L https://downloads.tuxfamily.org/godotengine/$VERSION/Godot_v$VERSION-stable_export_templates.tpz -o templates.tpz
+          unzip templates.tpz
+          mv templates/* "$HOME/Library/Application Support/Godot/export_templates/"
 
-    - name: Create build directory
-      run: mkdir -p build
+      - name: Export Xcode project
+        run: |
+          godot --headless --export-release "iOS" ios
 
-    - name: Export iOS Xcode project
-      run: godot --path . --export-release "iOS_build" build/atestathorror.xcodeproj
+      - name: Build archive
+        run: |
+          cd ios
+          xcodebuild \
+            -scheme Godot \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath build.xcarchive \
+            archive \
+            CODE_SIGNING_ALLOWED=NO
 
-    - name: Build unsigned archive
-      run: xcodebuild -project build/atestathorror.xcodeproj -scheme "Atestat Horror" -configuration Release -archivePath build/atestathorror.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      - name: Create unsigned IPA
+        run: |
+          cd ios
+          xcodebuild -exportArchive \
+            -archivePath build.xcarchive \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath export
 
-    - name: Create unsigned IPA
-      run: |
-        cd build/atestathorror.xcarchive/Products/Applications
-        mkdir Payload
-        mv "Atestat Horror.app" Payload/
-        zip -r ../../../../atestathorror.ipa Payload/
-
-    - name: Upload IPA artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: atestathorror-ipa
-        path: atestathorror.ipa
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: atestat-ios
+          path: ios/export/*.ipa
