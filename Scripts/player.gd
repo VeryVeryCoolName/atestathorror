@@ -2,7 +2,7 @@ class_name PlayerCharacter
 extends CharacterBody2D
 @export var offset := 86
 @export var move_speed := 425.0
-@export var attack_cooldown := 0.45
+@export var attack_cooldown := 0.35
 @export_node_path("TextureProgressBar") var health_bar_path
 const MAX_HEALTH := 100
 var attack_cooldown_timer := 0.0
