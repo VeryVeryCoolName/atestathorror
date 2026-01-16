@@ -25,7 +25,7 @@ jobs:
   
       - name: Export Xcode project
         run: |
-          godot --headless --export-release "iOS" ios
+          godot --headless --export-release "iOS" ios --no-window --quit
 
       - name: Build archive
         run: |
