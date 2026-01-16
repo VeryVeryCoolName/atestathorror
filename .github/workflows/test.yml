@@ -29,32 +29,26 @@ jobs:
         cd ~/Library/Application\ Support/Godot/export_templates/4.5.stable
         wget https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_export_templates.tpz
         unzip Godot_v4.5-stable_export_templates.tpz
-        cd templates
-        mv * ..
-        cd ..
-        rm -rf templates
+        mv templates/* .
+        rmdir templates
 
     - name: Create build directory
       run: mkdir -p build
 
-    - name: Export iOS project
+    - name: Export iOS Xcode project
       run: godot --headless --path . --export-release "iOS_build" build/atestathorror.xcodeproj
 
-    - name: Set iOS Deployment Target
-      run: sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = .*/IPHONEOS_DEPLOYMENT_TARGET = 14.0;/g' build/atestathorror.xcodeproj/project.pbxproj
-
-    - name: Build iOS project
+    - name: Build unsigned archive
       run: xcodebuild -project build/atestathorror.xcodeproj -scheme "Atestat Horror" -configuration Release -archivePath build/atestathorror.xcarchive archive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
-    - name: Export IPA
+    - name: Create unsigned IPA
       run: |
         cd build/atestathorror.xcarchive/Products/Applications
         mkdir Payload
         mv "Atestat Horror.app" Payload/
-        zip -r ../../../atestathorror.ipa Payload/
-        cd ../../../..
+        zip -r ../../../../atestathorror.ipa Payload/
 
-    - name: Upload IPA to GitHub Artifacts
+    - name: Upload IPA artifact
       uses: actions/upload-artifact@v4
       with:
         name: atestathorror-ipa
